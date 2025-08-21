@@ -58,16 +58,20 @@
     .brand-ribbon .bi{background:#F2C811;color:#111}
     .brand-ribbon .sp{background:#03787C}
 
-    /* Background blobs */
-    .bg{position:fixed;inset:-20vmax;z-index:-1;pointer-events:none;overflow:hidden}
-    .blob{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(60px);opacity:.33;mix-blend-mode:screen}
-    .b1{background:radial-gradient(closest-side,var(--primary),transparent 60%);top:10%;left:5%;animation:blob1 18s linear infinite}
-    .b2{background:radial-gradient(closest-side,var(--primary-2),transparent 60%);top:40%;left:60%;animation:blob2 22s linear infinite}
-    .b3{background:radial-gradient(closest-side,var(--accent-bi),transparent 60%);top:70%;left:20%;animation:blob3 26s linear infinite}
-    @keyframes blob1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(12%, -8%) scale(1.1)}100%{transform:translate(0,0) scale(1)}}
-    @keyframes blob2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-10%, 6%) scale(1.08)}100%{transform:translate(0,0) scale(1)}}
-    @keyframes blob3{0%{transform:translate(0,0) scale(1)}50%{transform:translate(8%, 10%) scale(1.12)}100%{transform:translate(0,0) scale(1)}}
-    @media (prefers-reduced-motion: reduce){.bg{display:none}}
+    /* Flow background (Power Automate vibe) */
+    .flow-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35}
+    .flow-bg svg{width:100%;height:100%}
+    .flow-line{stroke:url(#flowGrad);stroke-width:2;fill:none;stroke-linecap:round;stroke-dasharray:12 10;animation:dash 14s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-400}}
+    .flow-node{fill:#fff;stroke:var(--primary-2);stroke-width:2;filter:drop-shadow(0 0 6px rgba(0,120,212,.35))}
+    .flow-pulse{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent-bi);box-shadow:0 0 0 8px rgba(242,200,17,.12),0 0 14px rgba(242,200,17,.55)}
+    .pulse1{offset-path:path('M50 120 C300 60 600 160 900 110 S1150 90 1200 160');animation:move1 12s linear infinite}
+    .pulse2{offset-path:path('M0 330 C220 290 480 380 720 320 S980 290 1200 360');animation:move2 16s linear infinite 1s}
+    .pulse3{offset-path:path('M0 580 C240 540 520 620 840 580 S1080 540 1200 600');animation:move3 20s linear infinite .5s}
+    @keyframes move1{to{offset-distance:100%}}
+    @keyframes move2{to{offset-distance:100%}}
+    @keyframes move3{to{offset-distance:100%}}
+    @media (prefers-reduced-motion: reduce){.flow-bg{display:none}}
 
     /* Header */
     header{
@@ -156,10 +160,24 @@
     .tech-tag{background:#e9f3ff;color:var(--primary);padding:.2rem .6rem;border-radius:15px;font-size:.8rem;font-weight:500}
 
     /* Work Samples */
-    .samples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:1rem}
+    .samples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.5rem;margin-top:1rem}
     .sample-card{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:1rem}
-    .sample-card img{width:100%;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+    .sample-card img{width:100%;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);aspect-ratio:16/9;object-fit:cover;cursor:zoom-in}
     .sample-card figcaption{margin-top:.6rem;font-size:.95rem}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:2000;padding:2rem}
+    .lightbox.show{display:flex}
+    .lightbox .frame{position:relative;max-width:min(1200px,92vw);max-height:86vh}
+    .lightbox img{max-width:100%;max-height:86vh;border-radius:12px;display:block}
+    .lightbox figcaption{margin-top:.6rem;text-align:center;color:#eee;font-size:.95rem}
+    .lightbox .close{position:absolute;top:-10px;right:-10px;background:#111;border:1px solid #444;color:#fff;border-radius:999px;width:36px;height:36px;font-size:20px;cursor:pointer}
+    .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(17,17,17,.7);border:1px solid #444;color:#fff;width:42px;height:42px;border-radius:999px;cursor:pointer}
+    .lightbox .prev{left:-56px}
+    .lightbox .next{right:-56px}
+
+    /* 3D hero canvas */
+    #hero3d{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.65}
 
     /* Education */
     .education-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
@@ -185,6 +203,11 @@
 
     /* Footer */
     footer{background:#2c3e50;color:#fff;text-align:center;padding:2rem}
+
+    /* 3D Tilt + Parallax */
+    .tiltable{position:relative;transform-style:preserve-3d;will-change:transform,box-shadow;transition:transform .2s ease, box-shadow .2s ease}
+    .tiltable::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.35), transparent 45%);opacity:0;transition:opacity .2s ease;pointer-events:none}
+    .tilt-active::after{opacity:.35}
 
     /* Animations */
     .fade-in{opacity:0;transform:translateY(30px);animation:fadeInUp .8s ease-out forwards;animation-play-state:paused}
@@ -227,10 +250,32 @@
   </style>
 </head>
 <body>
-  <div class="bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+  <div class="flow-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="var(--primary-2)" />
+          <stop offset="100%" stop-color="var(--primary)" />
+        </linearGradient>
+      </defs>
+      <path class="flow-line" d="M50 120 C300 60 600 160 900 110 S1150 90 1200 160" />
+      <path class="flow-line" d="M0 330 C220 290 480 380 720 320 S980 290 1200 360" />
+      <path class="flow-line" d="M0 580 C240 540 520 620 840 580 S1080 540 1200 600" />
+      <circle class="flow-node" cx="250" cy="90" r="5" />
+      <circle class="flow-node" cx="800" cy="120" r="5" />
+      <circle class="flow-node" cx="420" cy="340" r="5" />
+      <circle class="flow-node" cx="980" cy="330" r="5" />
+      <circle class="flow-node" cx="600" cy="610" r="5" />
+      <circle class="flow-node" cx="1100" cy="590" r="5" />
+    </svg>
+    <span class="flow-pulse pulse1"></span>
+    <span class="flow-pulse pulse2"></span>
+    <span class="flow-pulse pulse3"></span>
+  </div>
   <a href="#about" class="skip-link">Skip to content</a>
 
   <header>
+    <div id="hero3d" aria-hidden="true"></div>
     <div class="header-content">
       <!-- Replace with your image. If not available, this circle still looks fine -->
       <img src="profile-photo.jpg" alt="Portrait of Lakshmi Praneetha Achanta" class="profile-img" loading="lazy" />
@@ -242,7 +287,6 @@
           <span role="listitem">📧 <a href="mailto:lakshmiachanta2000@gmail.com">lakshmiachanta2000@gmail.com</a></span>
           <span role="listitem">📱 <a href="tel:+19178470703">(917) 847-0703</a></span>
         </div>
-        $1
         <div class="brand-ribbon"><span class="chip apps">Power Apps</span><span class="chip automate">Power Automate</span><span class="chip bi">Power BI</span><span class="chip sp">SharePoint</span></div>
       </div>
     </div>
@@ -454,6 +498,15 @@
       </p>
       <a href="mailto:lakshmiachanta2000@gmail.com?subject=Microsoft 365 Developer Opportunity" class="cta-button">📧 Let's Connect</a>
     </section>
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+      <div class="frame">
+        <button class="close" aria-label="Close">×</button>
+        <button class="nav prev" aria-label="Previous">‹</button>
+        <img src="" alt="" />
+        <button class="nav next" aria-label="Next">›</button>
+        <figcaption></figcaption>
+      </div>
+    </div>
   </main>
 
   <footer role="contentinfo">
@@ -481,6 +534,55 @@
   </script>
 
   <script>
+    // 3D tilt & flow parallax (no libraries)
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    function tiltify(selector, maxX=10, maxY=12){
+      if (prefersReduced || !window.matchMedia('(hover:hover)').matches) return;
+      document.querySelectorAll(selector).forEach(el=>{
+        el.classList.add('tiltable');
+        let raf=null;
+        const onMove = (e)=>{
+          const rect = el.getBoundingClientRect();
+          const x = (e.clientX - rect.left)/rect.width;
+          const y = (e.clientY - rect.top)/rect.height;
+          const rx = (0.5 - y) * (maxX*2);
+          const ry = (x - 0.5) * (maxY*2);
+          el.style.setProperty('--mx', (x*100).toFixed(2)+'%');
+          el.style.setProperty('--my', (y*100).toFixed(2)+'%');
+          if (raf) cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(()=>{
+            el.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateZ(0)`;
+            el.classList.add('tilt-active');
+            el.style.boxShadow = '0 18px 45px rgba(0,0,0,.18)';
+          });
+        };
+        const reset = ()=>{
+          if (raf) cancelAnimationFrame(raf);
+          el.style.transform = 'rotateX(0) rotateY(0)';
+          el.classList.remove('tilt-active');
+          el.style.boxShadow = '';
+        };
+        el.addEventListener('mousemove', onMove);
+        el.addEventListener('mouseleave', reset);
+      });
+    }
+
+    // Apply tilt to key elements
+    tiltify('.project-card, .sample-card, .education-card', 8, 10);
+    tiltify('.profile-img', 6, 6);
+
+    // Parallax the flow background slightly on scroll
+    (function(){
+      if (prefersReduced) return;
+      const flow = document.querySelector('.flow-bg');
+      if (!flow) return;
+      window.addEventListener('scroll', ()=>{
+        const y = window.scrollY || document.documentElement.scrollTop;
+        flow.style.transform = `translateY(${(y*0.04).toFixed(1)}px)`;
+      });
+    })();
+
     // Smooth scroll with focus management (keeps anchors visible under sticky nav)
     document.querySelectorAll('nav a').forEach(link => {
       link.addEventListener('click', e => {
@@ -517,5 +619,116 @@
     });
     toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
   </script>
+<script>
+  // Simple lightbox for Work Samples
+  (function(){
+    const imgs = Array.from(document.querySelectorAll('.sample-card img'));
+    if (!imgs.length) return;
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('figcaption');
+    const prevBtn = lb.querySelector('.prev');
+    const nextBtn = lb.querySelector('.next');
+    const closeBtn = lb.querySelector('.close');
+    let idx = 0;
+    function show(i){
+      idx = (i + imgs.length) % imgs.length;
+      const img = imgs[idx];
+      lbImg.src = img.getAttribute('src');
+      lbImg.alt = img.getAttribute('alt') || '';
+      lbCap.textContent = img.getAttribute('alt') || '';
+      lb.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){ lb.classList.remove('show'); document.body.style.overflow=''; }
+    imgs.forEach((img,i)=> img.addEventListener('click', ()=> show(i)) );
+    prevBtn.addEventListener('click', ()=> show(idx-1));
+    nextBtn.addEventListener('click', ()=> show(idx+1));
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) close(); });
+    document.addEventListener('keydown',(e)=>{
+      if(!lb.classList.contains('show')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowRight') show(idx+1);
+      if(e.key==='ArrowLeft') show(idx-1);
+    });
+  })();
+</script>
+<script type="module">
+  // Lightweight 3D nodes background in the hero using Three.js (progressive enhancement)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    (async () => {
+      try{
+        const THREE = await import('https://unpkg.com/three@0.158.0/build/three.module.js');
+        const container = document.getElementById('hero3d');
+        if(!container) return;
+        const w = container.clientWidth, h = container.clientHeight;
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 1000);
+        camera.position.z = 60;
+        const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(w, h);
+        container.appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+        const nodes = [];
+        const bounds = 28;
+        const nodeGeo = new THREE.SphereGeometry(0.7, 16, 16);
+        const nodeMat = new THREE.MeshBasicMaterial({ color: 0x0078D4 }); // Automate blue
+        for(let i=0;i<26;i++){
+          const m = new THREE.Mesh(nodeGeo, nodeMat.clone());
+          m.position.set((Math.random()*2-1)*bounds, (Math.random()*2-1)*bounds*0.6, (Math.random()*2-1)*bounds);
+          m.userData.v = new THREE.Vector3((Math.random()-0.5)*0.2, (Math.random()-0.5)*0.2, (Math.random()-0.5)*0.2);
+          group.add(m); nodes.push(m);
+        }
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x742774, transparent:true, opacity:0.5 }); // Power Apps purple
+        const lineGeo = new THREE.BufferGeometry();
+        const maxSeg = nodes.length*nodes.length*2;
+        const positions = new Float32Array(maxSeg*3);
+        const lines = new THREE.LineSegments(lineGeo, lineMat);
+        scene.add(lines);
+
+        function updateLines(){
+          let idx = 0;
+          for(let i=0;i<nodes.length;i++){
+            for(let j=i+1;j<nodes.length;j++){
+              const a = nodes[i].position, b = nodes[j].position;
+              const d = a.distanceTo(b);
+              if(d < 15){
+                positions[idx++] = a.x; positions[idx++] = a.y; positions[idx++] = a.z;
+                positions[idx++] = b.x; positions[idx++] = b.y; positions[idx++] = b.z;
+              }
+            }
+          }
+          lineGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+          lineGeo.setDrawRange(0, idx);
+          lineGeo.attributes.position.needsUpdate = true;
+        }
+
+        function animate(){
+          requestAnimationFrame(animate);
+          nodes.forEach(n=>{
+            n.position.add(n.userData.v);
+            ['x','y','z'].forEach(k=>{
+              if(n.position[k] > bounds){ n.position[k] = bounds; n.userData.v[k]*=-1; }
+              if(n.position[k] < -bounds){ n.position[k] = -bounds; n.userData.v[k]*=-1; }
+            });
+          });
+          updateLines();
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', ()=>{
+          const w = container.clientWidth, h = container.clientHeight;
+          renderer.setSize(w, h);
+          camera.aspect = w/h; camera.updateProjectionMatrix();
+        });
+      }catch(e){/* no-op if CDN blocked */}
+    })();
+  }
+</script>
 </body>
 </html>
