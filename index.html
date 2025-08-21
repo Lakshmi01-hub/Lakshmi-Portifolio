@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lakshmi Praneetha Achanta - Business Applications Developer</title>
+  <title>Lakshmi Praneetha Achanta - Microsoft 365 Application Developer</title>
 
   <!-- SEO -->
   <meta name="description" content="Microsoft 365 Application Developer specializing in SharePoint Online, Power Platform (Power Apps, Power Automate, Power BI, Power Pages), SPFx, and .NET/SQL integrations." />
@@ -24,12 +24,13 @@
 
   <style>
     :root{
-      --primary:#0078d4;
-      --primary-2:#106ebe;
-      --primary-3:#005a9e;
+      --primary:#742774; /* Power Apps */
+      --primary-2:#0078D4; /* Power Automate */
+      --primary-3:#03787C; /* SharePoint */
+      --accent-bi:#F2C811; /* Power BI */
       --ink:#333;
       --bg:#ffffff;
-      --muted:#2c3e50;
+      --muted:#1a2230;
       --card:#ffffff;
     }
     *{margin:0;padding:0;box-sizing:border-box}
@@ -48,6 +49,25 @@
       position:fixed;left:1rem;top:1rem;width:auto;height:auto;background:#fff;
       color:#000;padding:.6rem .8rem;border-radius:.5rem;box-shadow:0 4px 20px rgba(0,0,0,.15);z-index:2000
     }
+
+    /* Brand ribbon */
+    .brand-ribbon{margin-top:.6rem;display:flex;gap:.6rem;flex-wrap:wrap}
+    .brand-ribbon .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;color:#fff}
+    .brand-ribbon .apps{background:#742774}
+    .brand-ribbon .automate{background:#0078D4}
+    .brand-ribbon .bi{background:#F2C811;color:#111}
+    .brand-ribbon .sp{background:#03787C}
+
+    /* Background blobs */
+    .bg{position:fixed;inset:-20vmax;z-index:-1;pointer-events:none;overflow:hidden}
+    .blob{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(60px);opacity:.33;mix-blend-mode:screen}
+    .b1{background:radial-gradient(closest-side,var(--primary),transparent 60%);top:10%;left:5%;animation:blob1 18s linear infinite}
+    .b2{background:radial-gradient(closest-side,var(--primary-2),transparent 60%);top:40%;left:60%;animation:blob2 22s linear infinite}
+    .b3{background:radial-gradient(closest-side,var(--accent-bi),transparent 60%);top:70%;left:20%;animation:blob3 26s linear infinite}
+    @keyframes blob1{0%{transform:translate(0,0) scale(1)}50%{transform:translate(12%, -8%) scale(1.1)}100%{transform:translate(0,0) scale(1)}}
+    @keyframes blob2{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-10%, 6%) scale(1.08)}100%{transform:translate(0,0) scale(1)}}
+    @keyframes blob3{0%{transform:translate(0,0) scale(1)}50%{transform:translate(8%, 10%) scale(1.12)}100%{transform:translate(0,0) scale(1)}}
+    @media (prefers-reduced-motion: reduce){.bg{display:none}}
 
     /* Header */
     header{
@@ -207,6 +227,7 @@
   </style>
 </head>
 <body>
+  <div class="bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
   <a href="#about" class="skip-link">Skip to content</a>
 
   <header>
@@ -215,16 +236,14 @@
       <img src="profile-photo.jpg" alt="Portrait of Lakshmi Praneetha Achanta" class="profile-img" loading="lazy" />
       <div class="header-text">
         <h1>Lakshmi Praneetha Achanta</h1>
-        <div class="subtitle">Microsoft 365 Application Developer</div>
+        <div class="subtitle">SharePoint &amp; Power Platform apps that cut manual work and surface KPIs fast.</div>
         <div class="location">📍 New Jersey, 08817</div>
         <div class="contact-info" role="list">
           <span role="listitem">📧 <a href="mailto:lakshmiachanta2000@gmail.com">lakshmiachanta2000@gmail.com</a></span>
           <span role="listitem">📱 <a href="tel:+19178470703">(917) 847-0703</a></span>
         </div>
-        <div style="margin-top:1rem;display:flex;gap:.6rem;flex-wrap:wrap">
-          <a class="cta-button" href="#samples" style="background:#fff;color:#0078d4">📁 Open Work Samples</a>
-          <a class="cta-button" href="resume.pdf" download>⬇️ Download Resume</a>
-        </div>
+        $1
+        <div class="brand-ribbon"><span class="chip apps">Power Apps</span><span class="chip automate">Power Automate</span><span class="chip bi">Power BI</span><span class="chip sp">SharePoint</span></div>
       </div>
     </div>
     <div class="ms-badge" aria-label="Microsoft 365 Expert: 3+ years">
@@ -237,7 +256,7 @@
   <nav aria-label="Primary">
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
+      <li><a href="#skills">Capabilities</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#samples">Work Samples</a></li>
@@ -250,79 +269,42 @@
     <section id="about" class="fade-in" tabindex="-1">
       <h2>About Me</h2>
       <div style="background: var(--card); padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; font-size: 1.1rem; line-height: 1.8;">
-        <p><strong>Experienced Microsoft 365 Application Developer</strong> with 3+ years specializing in SharePoint Online architecture, Power Platform development, and enterprise system integrations. Expert in designing custom SharePoint Framework (SPFx) web parts, building .NET console applications for database integration, and implementing comprehensive workflow automation solutions.</p>
+        <p><strong>I build SharePoint &amp; Power Platform solutions</strong> that turn messy, manual processes into simple apps, flows, and dashboards. My focus is quick, reliable delivery: clean lists/Dataverse tables, role‑based access, and KPIs teams can actually use.</p>
         <br />
-        <p><strong>Technical Leadership:</strong> Proven track record working with large government agencies and utility organizations, delivering scalable solutions using Power Apps, Power Automate, Power BI, and third-party tools like Infowise Ultimate Forms and Plumsail Documents. Self-motivated professional capable of working independently with minimal supervision while maintaining excellent communication with stakeholders and business analysts.</p>
+        <p><strong>Recent work:</strong> model‑driven apps for admin workflows, canvas apps for the field, Power Automate for intake/approvals, Power BI for exec views, and Azure Purview to keep data cataloged and trustworthy. I document clearly and leave things easy to maintain.</p>
       </div>
     </section>
 
     <section id="skills" class="fade-in" tabindex="-1">
-      <h2>Technical Expertise</h2>
+      <h2>Capabilities</h2>
       <div class="skills-grid">
-        <!-- Microsoft 365 & Power Platform -->
         <div class="skill-category">
-          <h3>🚀 Microsoft 365 & Power Platform</h3>
+          <h3>🧱 Build</h3>
           <div class="skill-tags">
-            <span class="skill-tag featured">SharePoint Online Architecture</span>
-            <span class="skill-tag featured">SharePoint Framework (SPFx)</span>
-            <span class="skill-tag featured">Power Apps (Canvas & Model-Driven)</span>
-            <span class="skill-tag featured">Power Automate Workflows</span>
-            <span class="skill-tag featured">Power BI Development</span>
-            <span class="skill-tag featured">Power Pages</span>
-            <span class="skill-tag featured">PowerShell Scripting</span>
-            <span class="skill-tag featured">Infowise Ultimate Forms</span>
-            <span class="skill-tag featured">Plumsail Documents</span>
-            <span class="skill-tag">Microsoft Graph APIs</span>
-            <span class="skill-tag">Azure Purview</span>
-            <span class="skill-tag">SharePoint Administration</span>
+            <span class="skill-tag featured">Power Apps (Canvas & Model‑Driven)</span>
+            <span class="skill-tag featured">SharePoint Lists & SPFx</span>
+            <span class="skill-tag">Power Pages</span>
+            <span class="skill-tag">Dataverse</span>
+            <span class="skill-tag">Microsoft Graph</span>
           </div>
         </div>
-        <!-- DevOps & Infrastructure -->
         <div class="skill-category">
-          <h3>⚙️ DevOps & Infrastructure</h3>
+          <h3>🔄 Automate</h3>
           <div class="skill-tags">
-            <span class="skill-tag featured">Azure DevOps</span>
-            <span class="skill-tag featured">Source Control & Git</span>
-            <span class="skill-tag featured">CI/CD Deployment Pipelines</span>
-            <span class="skill-tag featured">Task Management</span>
+            <span class="skill-tag featured">Power Automate (Approvals & RPA)</span>
+            <span class="skill-tag">Teams Adaptive Cards</span>
+            <span class="skill-tag">Dataflows</span>
             <span class="skill-tag">Azure Data Factory</span>
-            <span class="skill-tag">Azure SQL Database</span>
-            <span class="skill-tag">Load Balancers</span>
-            <span class="skill-tag">Azure Security Center</span>
-            <span class="skill-tag">Infrastructure Monitoring</span>
+            <span class="skill-tag">Governance & RBAC</span>
           </div>
         </div>
-        <!-- Development & Database -->
         <div class="skill-category">
-          <h3>💻 Development & Database</h3>
+          <h3>📊 Visualize & Govern</h3>
           <div class="skill-tags">
-            <span class="skill-tag">.NET Programming</span>
-            <span class="skill-tag featured">SQL Server Development</span>
-            <span class="skill-tag featured">Stored Procedures & Views</span>
-            <span class="skill-tag featured">Dataverse</span>
-            <span class="skill-tag">.NET Console Applications</span>
-            <span class="skill-tag">C# Development</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag featured">TypeScript</span>
-          </div>
-        </div>
-        <!-- Office & Analytics -->
-        <div class="skill-category">
-          <h3>📊 Microsoft Office Suite & Analytics</h3>
-          <div class="skill-tags">
-            <span class="skill-tag featured">Excel Advanced (Formulas & Macros)</span>
-            <span class="skill-tag featured">PowerPoint Presentations</span>
-            <span class="skill-tag featured">Visio Process Diagrams</span>
-            <span class="skill-tag featured">Word Documentation</span>
-            <span class="skill-tag featured">Adobe Acrobat Pro</span>
-            <span class="skill-tag">Tableau</span>
-            <span class="skill-tag">DAX</span>
-            <span class="skill-tag">Power Query</span>
-            <span class="skill-tag">Data Modeling</span>
-            <span class="skill-tag">Statistical Analysis</span>
+            <span class="skill-tag featured">Power BI (DAX, RLS)</span>
+            <span class="skill-tag">Purview Catalog</span>
+            <span class="skill-tag">KPIs & Executive Views</span>
+            <span class="skill-tag">Documentation</span>
           </div>
         </div>
       </div>
@@ -382,24 +364,35 @@
     <section id="projects" class="fade-in" tabindex="-1">
       <h2>Key Projects & Portfolio</h2>
       <div class="projects-grid">
-        <!-- (Use your existing project cards here; omitted for brevity in preview) -->
         <div class="project-card">
-          <h3>🛡️ MarineMesh Network Performance Dashboard</h3>
-          <p>Architected real-time monitoring with Power BI + SharePoint Online; automated ingestion & alerts with Power Automate and SQL.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Power BI Development</span>
-            <span class="tech-tag">SQL Integration</span>
-            <span class="tech-tag">SharePoint Online</span>
-          </div>
+          <h3>🧭 M365 Compliance Hub</h3>
+          <p>Central place for retention labels, DLP alerts, and exception approvals. Power Automate routes reviews; Power BI reports show exposure and status; SharePoint stores auditable decisions.</p>
+          <div class="project-tech"><span class="tech-tag">Microsoft Purview</span><span class="tech-tag">Power Automate</span><span class="tech-tag">Power BI</span><span class="tech-tag">SharePoint Online</span></div>
         </div>
         <div class="project-card">
-          <h3>🔄 Legacy .NET to Power Platform Migration</h3>
-          <p>Migrated .NET jobs to Power Automate/Dataverse; SPFx web parts; PowerShell deployment automation.</p>
-          <div class="project-tech">
-            <span class="tech-tag">.NET Migration</span>
-            <span class="tech-tag">Power Platform</span>
-            <span class="tech-tag">SPFx</span>
-          </div>
+          <h3>🚚 SharePoint On‑Prem → Online Migration</h3>
+          <p>Inventory, map, and migrate sites/lists to SharePoint Online with content types and modern permissions. Post‑cutover health checks and redirect plan included.</p>
+          <div class="project-tech"><span class="tech-tag">SharePoint Migration</span><span class="tech-tag">Content Types</span><span class="tech-tag">Modern Auth</span><span class="tech-tag">Site Scripts</span></div>
+        </div>
+        <div class="project-card">
+          <h3>🔐 Access Recertification & Site Provisioning</h3>
+          <p>Model‑driven app to request/approve SharePoint site access and run quarterly recerts. Teams adaptive cards collect approvals; Graph checks membership; Dataverse keeps the log.</p>
+          <div class="project-tech"><span class="tech-tag">Power Apps (Model‑Driven)</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Microsoft Graph</span><span class="tech-tag">Teams</span><span class="tech-tag">SharePoint Online</span></div>
+        </div>
+        <div class="project-card">
+          <h3>🧪 Data Quality & Drift Monitor</h3>
+          <p>Scheduled flows snapshot key tables, hash and compare, and raise a Teams alert with a sparkline when values drift. Optional AI Builder sentiment for text fields.</p>
+          <div class="project-tech"><span class="tech-tag">Power Automate</span><span class="tech-tag">AI Builder</span><span class="tech-tag">Power BI</span><span class="tech-tag">Teams</span></div>
+        </div>
+        <div class="project-card">
+          <h3>🌐 Client Project View Portal</h3>
+          <p>External Power Pages portal where clients track milestones, deliverables, and KPIs. Embeds Power BI and writes feedback to SharePoint/Dataverse.</p>
+          <div class="project-tech"><span class="tech-tag">Power Pages</span><span class="tech-tag">Power BI Embed</span><span class="tech-tag">Dataverse</span><span class="tech-tag">SharePoint</span></div>
+        </div>
+        <div class="project-card">
+          <h3>🧩 Legacy App → Power Platform Migration</h3>
+          <p>Rebuilt spreadsheets/forms as Power Apps; moved data to Dataverse/SharePoint; replaced nightly jobs with Power Automate; added Power BI KPIs.</p>
+          <div class="project-tech"><span class="tech-tag">Power Apps</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Power Automate</span><span class="tech-tag">Power BI</span></div>
         </div>
       </div>
     </section>
@@ -407,6 +400,18 @@
     <section id="samples" class="fade-in" tabindex="-1">
       <h2>Work Samples</h2>
       <div class="samples-grid">
+        <figure class="sample-card">
+          <img src="Marketing Insight Loop. Data-to-Action Flow.png" alt="Marketing Insight Loop. Data-to-Action Flow" loading="lazy" />
+          <figcaption><strong>Marketing Insight Loop. Data-to-Action Flow</strong></figcaption>
+        </figure>
+        <figure class="sample-card">
+          <img src="DailyETL.png" alt="Daily ETL" loading="lazy" />
+          <figcaption><strong>Daily ETL</strong></figcaption>
+        </figure>
+        <figure class="sample-card">
+          <img src="GetTwitter.png" alt="GetTwitter" loading="lazy" />
+          <figcaption><strong>GetTwitter</strong></figcaption>
+        </figure>
         <figure class="sample-card">
           <img src="Present2.png" alt="Latency vs Packet Loss bubble map" loading="lazy" />
           <figcaption><strong>Latency vs Packet Loss</strong> (Power BI)</figcaption>
@@ -416,7 +421,7 @@
           <figcaption><strong>Network Overview</strong> (Power BI)</figcaption>
         </figure>
         <figure class="sample-card">
-          <img src="PowerPagesForExternal.png" alt="Power Pages client portal titled Client Project View" loading="lazy" />
+          <img src="PowerPagesForExternal.png" alt="Client Project View portal screenshot" loading="lazy" />
           <figcaption><strong>Client Project View</strong> (Power Pages)</figcaption>
         </figure>
       </div>
@@ -443,9 +448,9 @@
     </section>
 
     <section id="contact" class="cta-section fade-in" tabindex="-1">
-      <h2>Ready to Drive Digital Transformation</h2>
+      <h2>Let’s build something useful</h2>
       <p style="font-size:1.2rem;margin-bottom:2rem">
-        Let's build innovative Microsoft 365 solutions that streamline operations, enhance data governance, and empower organizations with modern, scalable technology platforms.
+        Let's talk SharePoint sites, Power Apps, and automation. I can show quick demos and discuss trade‑offs for your team.
       </p>
       <a href="mailto:lakshmiachanta2000@gmail.com?subject=Microsoft 365 Developer Opportunity" class="cta-button">📧 Let's Connect</a>
     </section>
@@ -503,18 +508,7 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Typing effect
-    const subtitle = document.querySelector('.subtitle');
-    const text = 'Microsoft 365 Application Developer';
-    let index = 0;
-    function typeWriter(){
-      if (!subtitle) return;
-      if (index < text.length){
-        subtitle.textContent = text.slice(0, index + 1);
-        index++; setTimeout(typeWriter, 90);
-      }
-    }
-    setTimeout(typeWriter, 600);
+    // Subtitle is static; typing effect removed for cleaner tone.
 
     // Back to top button
     const toTop = document.getElementById('toTop');
