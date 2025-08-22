@@ -3,487 +3,675 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lakshmi Praneetha Achanta · Microsoft 365 Application Developer</title>
-  <meta name="description" content="SharePoint Online · Power Platform · Power BI · SPFx · Azure SQL · .NET" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>Lakshmi Praneetha Achanta - Microsoft 365 Application Developer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Microsoft 365 Application Developer specializing in SharePoint Online, Power Platform (Power Apps, Power Automate, Power BI, Power Pages), SPFx, and .NET/SQL integrations." />
+  <link rel="canonical" href="https://lakshmi01-hub.github.io/Lakshmi-Portifolio/" />
+
+  <!-- Social cards -->
+  <meta property="og:title" content="Lakshmi Praneetha Achanta — Microsoft 365 Application Developer" />
+  <meta property="og:description" content="SharePoint · Power Platform · SPFx · .NET/SQL · Azure DevOps" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lakshmi01-hub.github.io/Lakshmi-Portifolio/" />
+  <meta property="og:image" content="profile-photo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Lakshmi Praneetha Achanta — Microsoft 365 Application Developer" />
+  <meta name="twitter:description" content="SharePoint · Power Platform · SPFx · .NET/SQL · Azure DevOps" />
+  <meta name="twitter:image" content="profile-photo.jpg" />
+
+  <link rel="icon" href="favicon.png" />
+
   <style>
     :root{
-      --bg:#0b1020;
-      --card:#0f1428;
-      --muted:#9fb0c3;
-      --text:#eaf2ff;
-      --primary:#4aa3ff;   /* Power Automate-ish blue */
-      --primary-2:#7b5cff; /* accent */
-      --accent:#2dd4bf;
-      --ring:rgba(74,163,255,.25);
-      --radius:18px;
-      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --primary:#742774; /* Power Apps */
+      --primary-2:#0078D4; /* Power Automate */
+      --primary-3:#03787C; /* SharePoint */
+      --accent-bi:#F2C811; /* Power BI */
+      --ink:#333;
+      --bg:#ffffff;
+      --muted:#1a2230;
+      --card:#ffffff;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
-      margin:0;
-      font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background: radial-gradient(1200px 600px at 10% -10%, rgba(74,163,255,.18), transparent),
-                  radial-gradient(900px 500px at 110% 20%, rgba(123,92,255,.16), transparent),
-                  linear-gradient(180deg, #0a0f1f 0%, #0b1020 60%, #0a0e1a 100%);
-      overflow-x:hidden;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height:1.6;color:var(--ink);background:var(--bg);overflow-x:hidden
     }
     a{color:inherit}
-    .container{max-width:1180px;margin:0 auto;padding:0 20px}
-    header.nav{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter:saturate(160%) blur(10px);
-      background:rgba(10,14,26,.55);
-      border-bottom:1px solid rgba(140,160,200,.12);
+
+    /* Skip link */
+    .skip-link{
+      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden
     }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand-ico{height:38px;width:38px;border-radius:14px;display:grid;place-items:center;
-      background:linear-gradient(135deg, rgba(74,163,255,.25), rgba(123,92,255,.22));
-      box-shadow: inset 0 0 0 1px rgba(140,160,200,.16);
+    .skip-link:focus{
+      position:fixed;left:1rem;top:1rem;width:auto;height:auto;background:#fff;
+      color:#000;padding:.6rem .8rem;border-radius:.5rem;box-shadow:0 4px 20px rgba(0,0,0,.15);z-index:2000
     }
-    .brand h1{margin:0;font-size:18px;line-height:1.1}
-    .brand small{display:block;color:var(--muted);font-weight:500;margin-top:2px}
-    .nav-actions a,.nav-actions button{
-      appearance:none;border:1px solid rgba(140,160,200,.2);background:transparent;
-      color:var(--text);padding:8px 12px;border-radius:999px;font-weight:600;
-      box-shadow:none;cursor:pointer;text-decoration:none;margin-left:8px;
+
+    /* Flow background (Power Automate vibe) */
+    .flow-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35}
+    .flow-bg svg{width:100%;height:100%}
+    .flow-line{stroke:url(#flowGrad);stroke-width:2;fill:none;stroke-linecap:round;stroke-dasharray:12 10;animation:dash 14s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-400}}
+    .flow-node{fill:#fff;stroke:var(--primary-2);stroke-width:2;filter:drop-shadow(0 0 6px rgba(0,120,212,.35))}
+    .flow-pulse{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent-bi);box-shadow:0 0 0 8px rgba(242,200,17,.12),0 0 14px rgba(242,200,17,.55)}
+    .pulse1{offset-path:path('M50 120 C300 60 600 160 900 110 S1150 90 1200 160');animation:move1 12s linear infinite}
+    .pulse2{offset-path:path('M0 330 C220 290 480 380 720 320 S980 290 1200 360');animation:move2 16s linear infinite 1s}
+    .pulse3{offset-path:path('M0 580 C240 540 520 620 840 580 S1080 540 1200 600');animation:move3 20s linear infinite .5s}
+    @keyframes move1{to{offset-distance:100%}}
+    @keyframes move2{to{offset-distance:100%}}
+    @keyframes move3{to{offset-distance:100%}}
+    @media (prefers-reduced-motion: reduce){.flow-bg{display:none}}
+
+    /* Header */
+    header{
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 50%, var(--primary-3) 100%);
+      color:#fff;padding:2.2rem 0;position:relative;overflow:hidden
     }
-    .nav-actions a:hover,.nav-actions button:hover{border-color:rgba(140,160,200,.35);background:rgba(140,160,200,.08)}
-    /* HERO */
-    .hero{position:relative;padding:60px 0 20px}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px}
-    .title{font-size:40px;font-weight:800;line-height:1.05;letter-spacing:-.01em;margin:0}
-    .title .grad{background:linear-gradient(90deg, var(--primary), var(--primary-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-    .lead{margin-top:14px;color:var(--muted);font-size:17px}
-    .badges{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
-    .badge{border:1px solid rgba(140,160,200,.25);border-radius:999px;padding:6px 10px;font-size:12px;color:#dfe9ff;background:rgba(140,160,200,.06)}
-    .cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
-    .btn{border:none;border-radius:999px;padding:10px 14px;font-weight:700;cursor:pointer}
-    .btn.primary{background:linear-gradient(90deg, var(--primary), var(--primary-2));color:white;box-shadow:0 8px 24px rgba(74,163,255,.35)}
-    .btn.ghost{background:transparent;border:1px solid rgba(140,160,200,.25);color:var(--text)}
-    .muted{color:var(--muted);font-size:12px;margin-top:10px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));border:1px solid rgba(140,160,200,.14);
-      border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .hl-list{margin:12px 0 0 0;padding-left:16px;color:#dfe9ff}
-    .stats{margin-top:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .stat{border:1px solid rgba(140,160,200,.18);border-radius:14px;padding:10px 12px;background:#0e1426}
-    .stat .k{font-size:22px;font-weight:800;margin-top:6px}
-    /* POWER AUTOMATE-LIKE FLOW LINES */
-    .flow{position:absolute;inset:0;pointer-events:none;opacity:.9}
-    .flow svg{position:absolute;inset:0;width:140%;height:420px;transform:translateX(-10%)}
-    .flow path{fill:none;stroke:rgba(74,163,255,.45);stroke-width:1.5;stroke-linecap:round;stroke-dasharray:6 8;animation:dash 8s linear infinite}
-    .flow path:nth-child(2){stroke:rgba(123,92,255,.45);animation-duration:9s}
-    .flow path:nth-child(3){stroke:rgba(45,212,191,.45);animation-duration:10s}
-    @keyframes dash{to{stroke-dashoffset:-160}}
-    /* PROJECTS */
-    section{padding:28px 0}
-    h2.sec{font-size:28px;margin:0 0 14px}
-    .grid{display:grid;gap:16px}
-    @media (min-width:700px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)}}
-    .p-card{border:1px solid rgba(140,160,200,.18);background:#0e1426;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column}
-    .p-cover{height:120px;position:relative;overflow:hidden}
-    .grad1{background:linear-gradient(135deg, rgba(74,163,255,.28),rgba(123,92,255,.28))}
-    .grad2{background:linear-gradient(135deg, rgba(45,212,191,.28),rgba(74,163,255,.28))}
-    .grad3{background:linear-gradient(135deg, rgba(255,180,108,.3),rgba(240,95,145,.28))}
-    .grad4{background:linear-gradient(135deg, rgba(130,145,170,.28),rgba(90,100,120,.28))}
-    .p-body{padding:14px}
-    .p-title{font-weight:700;margin:0 0 6px}
-    .p-tease{color:var(--muted);font-size:14px;margin:0 0 10px}
-    .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-    .chip{font-size:11px;border:1px solid rgba(140,160,200,.22);border-radius:999px;padding:4px 8px;color:#cfe1ff}
-    .p-actions{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border-top:1px solid rgba(140,160,200,.12)}
-    .btn-sm{font-size:12px;padding:7px 10px;border-radius:999px;border:1px solid rgba(140,160,200,.22);background:transparent;color:#eaf2ff;text-decoration:none}
-    .btn-sm:hover{background:rgba(140,160,200,.08)}
-    /* WORK SAMPLES GALLERY */
-    .gallery{display:grid;gap:12px}
-    @media (min-width:680px){.gallery{grid-template-columns:repeat(2,1fr)}}
-    @media (min-width:960px){.gallery{grid-template-columns:repeat(3,1fr)}}
-    .g-item{position:relative;border:1px solid rgba(140,160,200,.18);border-radius:14px;overflow:hidden;cursor:zoom-in;background:#0d1224}
-    .g-item img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .3s ease}
-    .g-item:hover img{transform:scale(1.03)}
-    .g-item .label{position:absolute;left:10px;bottom:10px;background:rgba(0,0,0,.45);color:white;padding:4px 8px;border-radius:999px;font-size:12px}
-    /* LIGHTBOX */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:16px;z-index:200}
-    .lightbox.open{display:flex}
-    .lightbox figure{max-width:1200px;width:100%;position:relative}
-    .lightbox img{width:100%;max-height:80vh;object-fit:contain;border-radius:14px}
-    .lb-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.14);border:none;border-radius:999px;color:white;padding:10px;cursor:pointer}
-    .lb-prev{left:-10px} .lb-next{right:-10px}
-    .lb-close{top:8px;right:10px;transform:none}
-    .lb-caption{color:#e8eefc;text-align:center;margin-top:8px;font-size:13px}
-    /* CTA + FOOTER */
-    .cta{border:1px solid rgba(140,160,200,.18);border-radius:var(--radius);background:#0e1426;padding:18px}
-    footer{border-top:1px solid rgba(140,160,200,.12);color:var(--muted)}
-    /* RESPONSIVE */
-    @media (max-width:900px){ .hero-grid{grid-template-columns:1fr} .title{font-size:34px}}
+    .header-content{
+      max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:3rem;position:relative;z-index:2
+    }
+    .profile-img{
+      width:200px;height:200px;border-radius:50%;
+      border:5px solid rgba(255,255,255,.3);object-fit:cover;
+      box-shadow:0 10px 30px rgba(0,0,0,.3);animation:float 3s ease-in-out infinite
+    }
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .header-text h1{font-size:3rem;margin-bottom:.5rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
+    .subtitle{font-size:1.5rem;margin-bottom:1rem;opacity:.92}
+    .location{font-size:1.1rem;opacity:.85;margin-bottom:1rem}
+    .brand-ribbon{margin-top:.6rem;display:flex;gap:.6rem;flex-wrap:wrap}
+    .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;color:#fff}
+    .apps{background:#742774}.automate{background:#0078D4}.bi{background:#F2C811;color:#111}.sp{background:#03787C}
+    /* NEW — core tech badges you asked for */
+    .tech-ribbon{margin-top:.6rem;display:flex;gap:.5rem;flex-wrap:wrap}
+    .tech{border:1px solid rgba(255,255,255,.6);color:#fff;border-radius:999px;padding:.28rem .6rem;font-size:.8rem;backdrop-filter:blur(6px);background:rgba(0,0,0,.12)}
+
+    .ms-badge{
+      position:absolute;top:20px;right:20px;background:rgba(255,255,255,.2);padding:1rem;border-radius:15px;
+      backdrop-filter:blur(10px);text-align:center;border:2px solid rgba(255,255,255,.3)
+    }
+    .ms-badge h3{color:#FFD700;margin-bottom:.4rem}
+
+    /* Nav */
+    nav{
+      background:var(--muted);padding:1rem 0;position:sticky;top:0;z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,.08)
+    }
+    nav ul{list-style:none;display:flex;justify-content:center;gap:2rem;max-width:1200px;margin:0 auto;padding:0 2rem}
+    nav a{color:#fff;text-decoration:none;padding:.5rem 1rem;border-radius:25px;transition:all .25s}
+    nav a:hover, nav a[aria-current="true"]{background:var(--primary);transform:translateY(-2px)}
+
+    /* Layout */
+    main{max-width:1200px;margin:0 auto;padding:0 2rem}
+    section{margin:4rem 0;padding:2rem 0;scroll-margin-top:88px}
+    h2{font-size:2.2rem;margin-bottom:2rem;color:#2c3e50;text-align:center;position:relative}
+    h2::after{content:'';width:100px;height:4px;background:linear-gradient(90deg,var(--primary),var(--primary-2));
+      display:block;margin:1rem auto;border-radius:2px}
+
+    /* Skills/Caps */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
+    .skill-category{
+      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);padding:2rem;border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,.08);transition:transform .3s
+    }
+    .skill-category:hover{transform:translateY(-5px)}
+    .skill-category h3{color:var(--primary);margin-bottom:1rem;font-size:1.1rem}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
+    .skill-tag{background:var(--primary);color:#fff;padding:.3rem .8rem;border-radius:20px;font-size:.9rem;font-weight:500}
+    .skill-tag.featured{background:linear-gradient(135deg,#ff6b6b,#ffa500);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.85}}
+
+    /* Experience timeline */
+    .experience-timeline{position:relative;padding-left:2rem}
+    .experience-timeline::before{
+      content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--primary),var(--primary-2))
+    }
+    .experience-item{
+      position:relative;margin-bottom:3rem;background:var(--card);padding:2rem;border-radius:15px;
+      box-shadow:0 5px 15px rgba(0,0,0,.08);margin-left:2rem
+    }
+    .experience-item::before{
+      content:'';position:absolute;left:-2.75rem;top:2rem;width:15px;height:15px;background:var(--primary);
+      border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px var(--primary)
+    }
+    .experience-item h3{color:#2c3e50;margin-bottom:.5rem}
+    .company{color:var(--primary);font-weight:600;margin-bottom:.4rem}
+    .duration{color:#666;font-style:italic;margin-bottom:1rem}
+    .experience-item ul{list-style:none}
+    .experience-item li{margin-bottom:.5rem;padding-left:1.5rem;position:relative}
+    .experience-item li::before{content:'▶';color:var(--primary);position:absolute;left:0}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
+    .project-card{
+      background:#fff;border-radius:15px;padding:2rem;box-shadow:0 5px 15px rgba(0,0,0,.08);
+      transition:all .3s;border-left:5px solid var(--primary)
+    }
+    .project-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+    .project-card h3{color:#2c3e50;margin-bottom:1rem}
+    .project-tech{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+    .tech-tag{background:#e9f3ff;color:var(--primary);padding:.2rem .6rem;border-radius:15px;font-size:.8rem;font-weight:500}
+
+    /* Work Samples */
+    .samples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.5rem;margin-top:1rem}
+    .sample-card{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:1rem}
+    .sample-card img{width:100%;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);aspect-ratio:16/9;object-fit:cover;cursor:zoom-in;transition:transform .2s}
+    .sample-card img:hover{transform:scale(1.02)}
+    .sample-card figcaption{margin-top:.6rem;font-size:.95rem}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:2000;padding:2rem}
+    .lightbox.show{display:flex}
+    .lightbox .frame{position:relative;max-width:min(1200px,92vw);max-height:86vh}
+    .lightbox img{max-width:100%;max-height:86vh;border-radius:12px;display:block}
+    .lightbox figcaption{margin-top:.6rem;text-align:center;color:#eee;font-size:.95rem}
+    .lightbox .close{position:absolute;top:-10px;right:-10px;background:#111;border:1px solid #444;color:#fff;border-radius:999px;width:36px;height:36px;font-size:20px;cursor:pointer}
+    .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(17,17,17,.7);border:1px solid #444;color:#fff;width:42px;height:42px;border-radius:999px;cursor:pointer}
+    .lightbox .prev{left:-56px}
+    .lightbox .next{right:-56px}
+
+    /* CTA */
+    .cta-section{
+      background:linear-gradient(135deg,var(--primary) 0%, var(--primary-2) 100%);color:#fff;text-align:center;
+      padding:4rem 2rem;border-radius:20px;margin:4rem 0
+    }
+    .cta-section h2{color:#fff;margin-bottom:1rem}
+    .cta-section h2::after{background:#fff}
+    .cta-button{
+      display:inline-block;background:#fff;color:var(--primary);padding:1rem 2rem;border-radius:50px;text-decoration:none;
+      font-weight:600;margin-top:1rem;transition:all .25s
+    }
+    .cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,.2)}
+
+    /* Footer */
+    footer{background:#2c3e50;color:#fff;text-align:center;padding:2rem}
+
+    /* 3D Tilt + Parallax (no WebGL needed) */
+    .tiltable{position:relative;transform-style:preserve-3d;will-change:transform,box-shadow;transition:transform .2s ease, box-shadow .2s ease}
+    .tiltable::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.35), transparent 45%);opacity:0;transition:opacity .2s ease;pointer-events:none}
+    .tilt-active::after{opacity:.35}
+
+    /* Animations */
+    .fade-in{opacity:0;transform:translateY(30px);animation:fadeInUp .8s ease-out forwards;animation-play-state:paused}
+    @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
+
+    /* Back to top */
+    .to-top{
+      position:fixed;right:16px;bottom:16px;background:#fff;color:#000;border:1px solid #e6e6e6;border-radius:999px;
+      padding:.6rem .9rem;box-shadow:0 10px 25px rgba(0,0,0,.12);cursor:pointer;display:none;z-index:999
+    }
+    .to-top.show{display:block}
+
+    /* Mobile */
+    @media (max-width: 768px){
+      .header-content{flex-direction:column;text-align:center;gap:1.5rem}
+      .header-text h1{font-size:2rem}
+      .contact-info{justify-content:center}
+      nav ul{flex-wrap:wrap;gap:1rem}
+      .ms-badge{position:static;margin-top:1rem}
+      .experience-timeline{padding-left:1rem}
+      .experience-item{margin-left:1rem}
+    }
+
+    /* Dark mode (auto) */
+    @media (prefers-color-scheme: dark){
+      :root{--ink:#e7e7e7;--bg:#0b0b0d;--card:#111218;--muted:#1a2230}
+      .skill-category{box-shadow:0 8px 26px rgba(0,0,0,.35)}
+      .project-card{background:#0f1218;box-shadow:0 10px 28px rgba(0,0,0,.35)}
+      .experience-item{background:#0f1218;box-shadow:0 10px 28px rgba(0,0,0,.35)}
+      .education-card{box-shadow:0 10px 28px rgba(0,0,0,.35)}
+      .cta-button{background:#111827;color:#fff;border:1px solid #2b3445}
+      .to-top{background:#0f1218;color:#fff;border-color:#2b3445}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important;transition:none !important;scroll-behavior:auto}
+      .profile-img{animation:none}
+    }
   </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <div class="brand">
-        <div class="brand-ico">⚙️</div>
-        <div>
-          <h1>Lakshmi Praneetha Achanta</h1>
-          <small>Microsoft 365 Application Developer</small>
+  <div class="flow-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="var(--primary-2)" />
+          <stop offset="100%" stop-color="var(--primary)" />
+        </linearGradient>
+      </defs>
+      <path class="flow-line" d="M50 120 C300 60 600 160 900 110 S1150 90 1200 160" />
+      <path class="flow-line" d="M0 330 C220 290 480 380 720 320 S980 290 1200 360" />
+      <path class="flow-line" d="M0 580 C240 540 520 620 840 580 S1080 540 1200 600" />
+      <circle class="flow-node" cx="250" cy="90" r="5" />
+      <circle class="flow-node" cx="800" cy="120" r="5" />
+      <circle class="flow-node" cx="420" cy="340" r="5" />
+      <circle class="flow-node" cx="980" cy="330" r="5" />
+      <circle class="flow-node" cx="600" cy="610" r="5" />
+      <circle class="flow-node" cx="1100" cy="590" r="5" />
+    </svg>
+    <span class="flow-pulse pulse1"></span>
+    <span class="flow-pulse pulse2"></span>
+    <span class="flow-pulse pulse3"></span>
+  </div>
+  <a href="#about" class="skip-link">Skip to content</a>
+
+  <header>
+    <div class="header-content">
+      <img src="profile-photo.jpg" alt="Portrait of Lakshmi Praneetha Achanta" class="profile-img" loading="lazy" />
+      <div class="header-text">
+        <h1>Lakshmi Praneetha Achanta</h1>
+        <div class="subtitle">SharePoint &amp; Power Platform apps that cut manual work and surface KPIs fast.</div>
+        <div class="location">📍 New Jersey, 08817</div>
+
+        <div class="brand-ribbon">
+          <span class="chip apps">Power Apps</span>
+          <span class="chip automate">Power Automate</span>
+          <span class="chip bi">Power BI</span>
+          <span class="chip sp">SharePoint</span>
+        </div>
+        <!-- NEW core tech row -->
+        <div class="tech-ribbon" aria-label="Core tools">
+          <span class="tech">.NET (C#)</span>
+          <span class="tech">SPFx / TypeScript</span>
+          <span class="tech">SQL Server</span>
+          <span class="tech">PowerShell</span>
+          <span class="tech">Azure DevOps (ALM)</span>
         </div>
       </div>
-      <div class="nav-actions">
-        <a id="lnLinkedIn" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a id="lnGitHub" href="#" target="_blank" rel="noreferrer">GitHub</a>
-        <a id="lnFolder" href="#" target="_blank" rel="noreferrer">Work Samples</a>
-        <a id="lnResume" href="#" target="_blank" rel="noreferrer">Resume</a>
-        <a href="mailto:lakshmiachanta2000@gmail.com">Email</a>
-      </div>
+    </div>
+    <div class="ms-badge" aria-label="Microsoft 365 Expert: 3+ years">
+      <h3>🏆 Microsoft 365 Expert</h3>
+      <p>3+ Years Experience</p>
+      <small>SharePoint • Power Platform • Power BI</small>
     </div>
   </header>
 
+  <nav aria-label="Primary">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Capabilities</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#samples">Work Samples</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <main>
-    <section class="hero">
-      <div class="flow">
-        <svg viewBox="0 0 1200 420" aria-hidden="true">
-          <path d="M-100 60 C 160 20, 420 140, 700 40 S 1180 180, 1400 60"></path>
-          <path d="M-100 140 C 160 100, 420 220, 700 120 S 1180 260, 1400 140"></path>
-          <path d="M-100 220 C 160 180, 420 300, 700 200 S 1180 340, 1400 220"></path>
-        </svg>
+    <section id="about" class="fade-in" tabindex="-1">
+      <h2>About Me</h2>
+      <div style="background: var(--card); padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; font-size: 1.1rem; line-height: 1.8;">
+        <p><strong>I design and ship Microsoft 365 solutions</strong> that turn manual work into Power Apps, Power Automate flows, and SharePoint experiences that people actually use. I’m comfortable across the stack—SPFx (TypeScript), .NET/C# integrations, SQL modeling, and Power BI dashboards with DAX/RLS—while keeping governance in mind with Purview, DLP, and clear documentation.</p>
+        <br />
+        <p><strong>What that looks like lately:</strong> model-driven apps for access requests and recerts; canvas apps for field teams; automated approvals with Teams Adaptive Cards; Power BI exec views; SPFx micro-dashboards; and Azure DevOps pipelines for ALM/CI-CD so changes move cleanly from Dev → Test → Prod.</p>
       </div>
-      <div class="container hero-grid">
-        <div>
-          <h2 class="title">Building reliable solutions on <span class="grad">Microsoft 365</span></h2>
-          <p class="lead">SharePoint Online, Power Platform (Apps/Automate/Pages/BI), SPFx, and integrations with Azure SQL &amp; .NET — with clean RBAC, CI/CD, and operator‑friendly docs.</p>
-          <div class="badges">
-            <span class="badge">SharePoint Online</span>
-            <span class="badge">SPFx / TypeScript</span>
-            <span class="badge">Power Apps</span>
-            <span class="badge">Power Automate</span>
-            <span class="badge">Power Pages</span>
-            <span class="badge">Power BI</span>
-            <span class="badge">Azure SQL</span>
-            <span class="badge">.NET (C#)</span>
-            <span class="badge">PowerShell</span>
-            <span class="badge">Azure DevOps (ALM)</span>
+    </section>
+
+    <section id="skills" class="fade-in" tabindex="-1">
+      <h2>Capabilities</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>🧱 Build</h3>
+          <div class="skill-tags">
+            <span class="skill-tag featured">Power Apps (Canvas &amp; Model-Driven)</span>
+            <span class="skill-tag featured">SharePoint Online &amp; SPFx</span>
+            <span class="skill-tag">Power Pages</span>
+            <span class="skill-tag">Dataverse</span>
+            <span class="skill-tag">Microsoft Graph</span>
           </div>
-          <div class="cta">
-            <a id="ctaFolder" class="btn primary" href="#" target="_blank" rel="noreferrer">Open Work Samples</a>
-            <a class="btn ghost" href="mailto:lakshmiachanta2000@gmail.com">Contact</a>
-          </div>
-          <div class="muted">Jersey City, NJ (Hybrid)</div>
         </div>
-        <div class="card">
-          <strong>Highlights</strong>
-          <ul class="hl-list">
-            <li>SPFx Project Status Card for modern sites</li>
-            <li>Model‑Driven App with Entra‑backed RBAC</li>
-            <li>Power Automate File Watcher (SharePoint ⇄ SQL)</li>
-            <li>Canvas inspection app + PDF export</li>
-            <li>Power Pages portal with table permissions</li>
-            <li>Power BI KPI pack with RLS</li>
-            <li>.NET console sync for doc metadata</li>
-            <li>Admin Guide &amp; Runbook (ALM, mailboxes)</li>
+        <div class="skill-category">
+          <h3>🔄 Automate</h3>
+          <div class="skill-tags">
+            <span class="skill-tag featured">Power Automate (Approvals, RPA)</span>
+            <span class="skill-tag">Teams Adaptive Cards</span>
+            <span class="skill-tag">Azure Data Factory</span>
+            <span class="skill-tag">Governance &amp; RBAC</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>📊 Data &amp; Analytics</h3>
+          <div class="skill-tags">
+            <span class="skill-tag featured">Power BI (DAX, RLS)</span>
+            <span class="skill-tag">SQL Server (Tables, Views, SPs)</span>
+            <span class="skill-tag">Dataflows / Power Query</span>
+            <span class="skill-tag">Purview Catalog</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3>🚀 DevOps &amp; Integrations</h3>
+          <div class="skill-tags">
+            <span class="skill-tag featured">Azure DevOps (ALM, CI/CD)</span>
+            <span class="skill-tag">.NET / C# Services</span>
+            <span class="skill-tag">PowerShell &amp; PnP</span>
+            <span class="skill-tag">Custom Connectors / APIs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="fade-in" tabindex="-1">
+      <h2>Professional Experience</h2>
+      <div class="experience-timeline">
+        <div class="experience-item">
+          <h3>Data Strategy Specialist</h3>
+          <div class="company">YouthVine Marketing Agency</div>
+          <div class="duration">November 2024 - July 2025 | Remote, San Diego, CA</div>
+          <ul>
+            <li>Built real-time Power BI dashboards on Azure SQL data using DAX and Power Query for instant leadership insights</li>
+            <li>Created model-driven Power Apps and end-to-end Power Platform solutions with RBAC security</li>
+            <li>Implemented data governance standards with Azure Purview for automated catalog and classification</li>
+            <li>Designed custom security roles and owner teams in Power Platform for role-based data access</li>
+            <li>Reduced ad-hoc report requests by 50% through interactive Tableau visualizations</li>
           </ul>
-          <div class="stats">
-            <div class="stat"><div class="k">50+</div><div class="muted">Apps &amp; Flows</div></div>
-            <div class="stat"><div class="k">2</div><div class="muted">Tenants</div></div>
-            <div class="stat"><div class="k">Enterprise</div><div class="muted">RLS/RBAC</div></div>
-          </div>
+        </div>
+        <div class="experience-item">
+          <h3>Business Data Analyst</h3>
+          <div class="company">Algoritm Corp</div>
+          <div class="duration">July 2025 - August 2025 | New Jersey</div>
+          <ul>
+            <li>Deployed ETL workflows in Azure Data Factory and Power Automate improving operational efficiency</li>
+            <li>Built low-code Power Apps solutions connected to SharePoint Lists for requirements tracking</li>
+            <li>Developed interactive dashboards embedded in SharePoint Online using Power BI</li>
+            <li>Automated KPIs and performance alerts providing visibility for budgeting and forecasting</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h3>Business Intelligence Analyst</h3>
+          <div class="company">P-Koncepts Tech Studio</div>
+          <div class="duration">December 2023 - August 2024 | Remote, Hyderabad, India</div>
+          <ul>
+            <li>Designed interactive Power BI dashboards delivering real-time analytics on sales and financial forecasting</li>
+            <li>Built integrations between Power Automate and backend SQL systems automating workflows</li>
+            <li>Leveraged Azure Data Factory for ETL processes creating centralized data repositories</li>
+            <li>Set up Azure Purview for digital asset tagging and quality standards tracking</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <h3>Business Analyst</h3>
+          <div class="company">Siddhartha Institute of Medical Sciences</div>
+          <div class="duration">April 2021 - June 2022 | Krishna, India</div>
+          <ul>
+            <li>Created Power BI dashboards for student enrollment and performance trend analysis</li>
+            <li>Centralized student records using Azure SQL Database for improved data accessibility</li>
+            <li>Automated data entry and report generation using Power Automate saving administrative time</li>
+            <li>Mapped existing workflows using process improvement tools and documentation</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section class="container">
-      <h2 class="sec">Projects</h2>
-      <div id="projects" class="grid cols-3"></div>
-    </section>
-
-    <section class="container">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px">
-        <h2 class="sec" style="margin:0">Work Samples</h2>
-        <div class="muted">Click any image to zoom. Arrow keys navigate.</div>
-      </div>
-      <div id="gallery" class="gallery"></div>
-    </section>
-
-    <section class="container">
-      <div class="cta">
-        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
-          <div style="height:44px;width:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg, rgba(74,163,255,.2), rgba(123,92,255,.2))">✉️</div>
-          <div style="flex:1;min-width:220px">
-            <div style="font-weight:700">Want a live walkthrough?</div>
-            <div class="muted">I can demo SPFx, model‑driven RBAC, and the File Watcher flow in under 15 minutes.</div>
-          </div>
-          <a class="btn primary" href="mailto:lakshmiachanta2000@gmail.com">Email Me</a>
-          <button class="btn ghost" id="copyPhone">Copy Phone</button>
+    <section id="projects" class="fade-in" tabindex="-1">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card tiltable">
+          <h3>🧭 M365 Compliance Hub</h3>
+          <p>Central place for retention labels, DLP alerts, and exception approvals. Power Automate routes reviews; Power BI reports show exposure and status; SharePoint stores auditable decisions.</p>
+          <div class="project-tech"><span class="tech-tag">Microsoft Purview</span><span class="tech-tag">Power Automate</span><span class="tech-tag">Power BI</span><span class="tech-tag">SharePoint Online</span></div>
+        </div>
+        <div class="project-card tiltable">
+          <h3>🚚 SharePoint On-Prem → Online Migration</h3>
+          <p>Inventory, map, and migrate sites/lists to SharePoint Online with content types and modern permissions. Post-cutover health checks and redirect plan included.</p>
+          <div class="project-tech"><span class="tech-tag">SharePoint Migration</span><span class="tech-tag">Content Types</span><span class="tech-tag">Modern Auth</span><span class="tech-tag">Site Scripts</span></div>
+        </div>
+        <div class="project-card tiltable">
+          <h3>🔐 Access Recertification & Site Provisioning</h3>
+          <p>Model-driven app to request/approve SharePoint site access and run quarterly recerts. Teams adaptive cards collect approvals; Graph checks membership; Dataverse keeps the log.</p>
+          <div class="project-tech"><span class="tech-tag">Power Apps (Model-Driven)</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Microsoft Graph</span><span class="tech-tag">Teams</span><span class="tech-tag">SharePoint Online</span></div>
+        </div>
+        <div class="project-card tiltable">
+          <h3>🧪 Data Quality & Drift Monitor</h3>
+          <p>Scheduled flows snapshot key tables, hash and compare, and raise a Teams alert with a sparkline when values drift. Optional AI Builder sentiment for text fields.</p>
+          <div class="project-tech"><span class="tech-tag">Power Automate</span><span class="tech-tag">AI Builder</span><span class="tech-tag">Power BI</span><span class="tech-tag">Teams</span></div>
+        </div>
+        <div class="project-card tiltable">
+          <h3>🌐 Client Project View Portal</h3>
+          <p>External Power Pages portal where clients track milestones, deliverables, and KPIs. Embeds Power BI and writes feedback to SharePoint/Dataverse.</p>
+          <div class="project-tech"><span class="tech-tag">Power Pages</span><span class="tech-tag">Power BI Embed</span><span class="tech-tag">Dataverse</span><span class="tech-tag">SharePoint</span></div>
+        </div>
+        <div class="project-card tiltable">
+          <h3>📈 Marketing Insight Loop</h3>
+          <p>Azure Data Factory pulls CRM and ad-platform data; curated tables feed Power BI; Teams cards prompt budget tweaks and log outcomes.</p>
+          <div class="project-tech"><span class="tech-tag">Azure Data Factory</span><span class="tech-tag">Power BI</span><span class="tech-tag">SharePoint</span><span class="tech-tag">Teams Adaptive Cards</span></div>
+        </div>
+        <div class="project-card tiltable">
+          <h3>🧩 Legacy App → Power Platform Migration</h3>
+          <p>Rebuilt spreadsheets/forms as Power Apps; moved data to Dataverse/SharePoint; replaced nightly jobs with Power Automate; added Power BI KPIs.</p>
+          <div class="project-tech"><span class="tech-tag">Power Apps</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Power Automate</span><span class="tech-tag">Power BI</span></div>
+        </div>
+        <div class="project-card tiltable">
+          <h3>🧷 SharePoint ↔ SQL Integration Service</h3>
+          <p>Lightweight .NET service moves curated data between SharePoint lists/Dataverse and SQL for analytics and retention. Includes retry logic, error logging, and idempotent upserts; surfaced via SPFx cards and monitored in Power BI.</p>
+          <div class="project-tech"><span class="tech-tag">.NET (C#)</span><span class="tech-tag">SQL Server</span><span class="tech-tag">SharePoint / Dataverse</span><span class="tech-tag">SPFx</span></div>
+        </div>
+        <div class="project-card tiltable">
+          <h3>🛠️ ALM &amp; CI/CD for Power Platform</h3>
+          <p>Solution-based ALM with Azure DevOps pipelines: unpack/pack, environment variables, connection refs, automated solution export/import, and approvals. Clean promotion Dev → Test → Prod with audit history.</p>
+          <div class="project-tech"><span class="tech-tag">Azure DevOps</span><span class="tech-tag">Power Platform ALM</span><span class="tech-tag">PowerShell</span><span class="tech-tag">Git</span></div>
         </div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0">
-      <div>© <span id="year"></span> Lakshmi Praneetha Achanta. Built for GitHub Pages.</div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a id="ftLinkedIn" class="muted" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a id="ftGitHub" class="muted" href="#" target="_blank" rel="noreferrer">GitHub</a>
-        <a id="ftFolder" class="muted" href="#" target="_blank" rel="noreferrer">Work Samples</a>
-        <a class="muted" href="mailto:lakshmiachanta2000@gmail.com">lakshmiachanta2000@gmail.com</a>
+    <section id="samples" class="fade-in" tabindex="-1">
+      <h2>Work Samples</h2>
+      <div class="samples-grid">
+        <figure class="sample-card tiltable">
+          <img src="Marketing Insight Loop. Data-to-Action Flow.png" alt="Marketing Insight Loop. Data-to-Action Flow" loading="lazy" />
+          <figcaption><strong>Marketing Insight Loop. Data-to-Action Flow</strong></figcaption>
+        </figure>
+        <figure class="sample-card tiltable">
+          <img src="DailyETL.png" alt="Daily ETL" loading="lazy" />
+          <figcaption><strong>Daily ETL</strong></figcaption>
+        </figure>
+        <figure class="sample-card tiltable">
+          <img src="GetTwitter.png" alt="GetTwitter" loading="lazy" />
+          <figcaption><strong>GetTwitter</strong></figcaption>
+        </figure>
+        <figure class="sample-card tiltable">
+          <img src="Present2.png" alt="Latency vs Packet Loss bubble map" loading="lazy" />
+          <figcaption><strong>Latency vs Packet Loss</strong> (Power BI)</figcaption>
+        </figure>
+        <figure class="sample-card tiltable">
+          <img src="Present1.png" alt="Network overview dashboard showing latency, packet loss, battery and signal strength" loading="lazy" />
+          <figcaption><strong>Network Overview</strong> (Power BI)</figcaption>
+        </figure>
+        <figure class="sample-card tiltable">
+          <img src="PowerPagesForExternal.png" alt="Client Project View portal screenshot" loading="lazy" />
+          <figcaption><strong>Client Project View</strong> (Power Pages)</figcaption>
+        </figure>
+      </div>
+      <p style="text-align:center;font-size:.9rem;color:#555;margin-top:1rem">All artifacts are sanitized and client-safe. Full demos available on request.</p>
+    </section>
+
+    <section id="education" class="fade-in" tabindex="-1">
+      <h2>Education & Certifications</h2>
+      <div class="skills-grid">
+        <div class="skill-category" style="text-align:center;color:#fff;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)">
+          <h3>🎓 Master of Information Systems</h3>
+          <div class="institution">Stevens Institute of Technology</div>
+          <div class="year">May 2024 | Hoboken, New Jersey</div>
+          <p style="margin-top: 1rem; font-size: 0.9rem;">
+            Strategic Project Management | IT Strategies | Business Analytics | Data Visualization | Financial Decision Making
+          </p>
+        </div>
+        <div class="skill-category" style="text-align:center;color:#fff;background:linear-gradient(135deg,#764ba2 0%,#9a5bd1 100%)">
+          <h3>🎓 Bachelor of Business Administration</h3>
+          <div class="institution">KL University</div>
+          <div class="year">Vijayawada, India</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta-section fade-in" tabindex="-1">
+      <h2>Let’s build something useful</h2>
+      <p style="font-size:1.2rem;margin-bottom:2rem">
+        Let's talk SharePoint sites, Power Apps, and automation. I can show quick demos and discuss trade-offs for your team.
+      </p>
+      <a href="mailto:lakshmiachanta2000@gmail.com?subject=Microsoft 365 Developer Opportunity" class="cta-button">📧 Let's Connect</a>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+      <div class="frame">
+        <button class="close" aria-label="Close">×</button>
+        <button class="nav prev" aria-label="Previous">‹</button>
+        <img src="" alt="" />
+        <button class="nav next" aria-label="Next">›</button>
+        <figcaption></figcaption>
       </div>
     </div>
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; <span id="year"></span> Lakshmi Praneetha Achanta | Microsoft 365 Application Developer | Transforming Business Through Technology</p>
   </footer>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <figure>
-      <img id="lbImg" alt="" />
-      <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous">◀</button>
-      <button class="lb-btn lb-next" id="lbNext" aria-label="Next">▶</button>
-      <button class="lb-btn lb-close" id="lbClose" aria-label="Close">✕</button>
-      <div id="lbCap" class="lb-caption"></div>
-    </figure>
-  </div>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑ Top</button>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Lakshmi Praneetha Achanta",
+    "jobTitle":"Microsoft 365 Application Developer",
+    "email":"mailto:lakshmiachanta2000@gmail.com",
+    "telephone":"+1-917-847-0703",
+    "address":{"@type":"PostalAddress","addressRegion":"NJ","addressCountry":"US"},
+    "url":"https://lakshmi01-hub.github.io/Lakshmi-Portifolio/",
+    "sameAs":[
+      "https://www.linkedin.com/in/<your-handle>",
+      "https://github.com/lakshmi01-hub"
+    ]
+  }
+  </script>
 
   <script>
-    // -------- CONFIG (fill in real links when you have them) --------
-    const CONTACT = {
-      phone: "917‑847‑0703",
-      links: {
-        linkedin: "#",
-        github: "#",
-        portfolioFolder: "#",
-        resume: "#"
-      }
-    };
-
-    // -------- Projects data (matches your role and tools) --------
-    const PROJECTS = [
-      {
-        title: "SPFx Project Status Card",
-        teaser: "Custom web part aggregates project data via PnPjs and surfaces risks/milestones across modern sites.",
-        problem: "Stakeholders saw out-of-sync status across many project sites.",
-        solution: "Configurable SPFx (React) web part reading selected lists; caching and property pane binding.",
-        stack: ["SharePoint Online","SPFx (React)","PnPjs","TypeScript"],
-        cover: "grad1",
-        links: { repo:"#", demo:"#", docs:"#"},
-      },
-      {
-        title: "Model‑Driven App with RBAC (Owner Teams + Entra SG)",
-        teaser: "Requests app using Owner Teams mapped to Entra security groups and stage-gate controls.",
-        problem: "Needed role-based visibility without data leakage.",
-        solution: "Dataverse RBAC with Owner Teams & Security Roles; stage gates via rules; audit + field security.",
-        stack: ["Dataverse","Model‑Driven App","Entra SG","Business Rules"],
-        cover: "grad2",
-        links: { demo:"#", docs:"#"},
-      },
-      {
-        title: "Power Automate: SharePoint ⇄ SQL File Watcher",
-        teaser: "Parses filenames, upserts to SQL, and routes emails (Dev: send on behalf, Prod: send as). DLQ handling.",
-        problem: "Manual triage caused delays and missed notifications.",
-        solution: "On create → regex parse → SQL upsert → notify → audit; env vars for mailboxes/URLs.",
-        stack: ["Power Automate","SharePoint","Azure SQL","O365 Outlook"],
-        cover: "grad3",
-        links: { docs:"#"},
-      },
-      {
-        title: "Canvas App: Field/Inspection Checklist",
-        teaser: "Offline-enabled mobile app with photo capture, geostamp, validation, and PDF export.",
-        problem: "Paper checklists and re-entry slowed reporting.",
-        solution: "Canvas app with Dataverse storage, media capture, and export flow; component library for inputs.",
-        stack: ["Power Apps (Canvas)","Dataverse","PDF Export"],
-        cover: "grad2",
-        links: { demo:"#"},
-      },
-      {
-        title: "Power Pages: External Request Portal",
-        teaser: "Partner portal with table permissions and web roles; CI/CD across environments.",
-        problem: "Email intake overwhelmed the team and lacked auditability.",
-        solution: "Table-permissioned portal with role-based access, forms, and queueing.",
-        stack: ["Power Pages","Dataverse","ALM"],
-        cover: "grad1",
-        links: { docs:"#"},
-      },
-      {
-        title: "Power BI: KPI Pack with RLS",
-        teaser: "Certified dataset (incremental refresh, DAX) and RLS mapped to Entra security groups.",
-        problem: "Leaders needed scoped KPIs without manual Excel merges.",
-        solution: "Dataset + report; RLS for departmental scope; drill-through views.",
-        stack: ["Power BI","Power Query","DAX","RLS"],
-        cover: "grad2",
-        links: { pbix:"#"},
-      },
-      {
-        title: ".NET Console: SharePoint ⇄ SQL Metadata Sync",
-        teaser: "Nightly job to stamp document metadata into SQL for downstream reporting; Graph/CSOM with retry.",
-        problem: "Reporting needed complete metadata without throttling errors.",
-        solution: "C# console app with app registration, auth, and exponential backoff; reconcile pass.",
-        stack: [".NET (C#)","Graph/CSOM","Azure App Reg","SQL"],
-        cover: "grad4",
-        links: { repo:"#", docs:"#"},
-      },
-      {
-        title: "Admin Guide & Runbook (ALM, Mailbox Strategy)",
-        teaser: "Provisioning, connection references, ENV VARS; Dev ‘send on behalf’ vs. Prod ‘send as’.",
-        problem: "Handoffs slowed delivery and caused deploy drift.",
-        solution: "Docs-first approach with ALM steps, incident response, and reprocess flows.",
-        stack: ["Azure DevOps","Solutions","ENV VARS","PIM"],
-        cover: "grad1",
-        links: { docs:"#"},
-      }
-    ];
-
-    // -------- Gallery data (use encodeURI to handle spaces) --------
-    const SAMPLE_FILES = [
-      { name:"DailyETL.png", label:"Daily ETL" },
-      { name:"GetTwitter.png", label:"GetTwitter" },
-      { name:"Marketing Insight Loop. Data-to-Action Flow.png", label:"Marketing Insight Loop. Data-to-Action Flow" },
-      { name:"Present1.png", label:"Network Overview (Power BI)" },
-      { name:"Present2.png", label:"Latency vs Packet Loss (Power BI)" },
-      { name:"PowerPagesForExternal.png", label:"Client Project View (Power Pages)" },
-    ];
-    const SAMPLES = SAMPLE_FILES.map(s => ({ src: encodeURI(s.name), alt: s.label }));
-
-    // -------- Render helpers --------
-    const $ = (sel, root=document) => root.querySelector(sel);
-    const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
-
-    // Header links (hide if placeholder '#')
-    function setLink(id, url){
-      const el = $(id);
-      if(!el) return;
-      if(url && url.trim() && url !== "#"){ el.href = url; el.style.display = "inline-block"; }
-      else { el.style.display = "none"; }
-    }
-
-    function renderProjects(){
-      const wrap = $("#projects");
-      wrap.innerHTML = "";
-      PROJECTS.forEach(p => {
-        const card = document.createElement("article");
-        card.className = "p-card";
-        card.innerHTML = `
-          <div class="p-cover ${p.cover}"></div>
-          <div class="p-body">
-            <h3 class="p-title">${p.title}</h3>
-            <p class="p-tease">${p.teaser}</p>
-            <div class="stack">${(p.stack||[]).map(s=>`<span class="chip">${s}</span>`).join("")}</div>
-          </div>
-          <div class="p-actions">
-            <div>
-              ${p.links?.demo && p.links.demo !== "#" ? `<a class="btn-sm" href="${p.links.demo}" target="_blank" rel="noreferrer">Demo</a>` : ""}
-              ${p.links?.repo && p.links.repo !== "#" ? `<a class="btn-sm" href="${p.links.repo}" target="_blank" rel="noreferrer">Repo</a>` : ""}
-              ${p.links?.docs && p.links.docs !== "#" ? `<a class="btn-sm" href="${p.links.docs}" target="_blank" rel="noreferrer">Docs</a>` : ""}
-              ${p.links?.pbix && p.links.pbix !== "#" ? `<a class="btn-sm" href="${p.links.pbix}" target="_blank" rel="noreferrer">PBIX</a>` : ""}
-            </div>
-            <button class="btn-sm" data-more="1">View details</button>
-          </div>
-        `;
-        card.querySelector("[data-more]")?.addEventListener("click", ()=> showProjectDetails(p));
-        wrap.appendChild(card);
+    // Mark current nav + smooth scroll + focus
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target){
+          target.scrollIntoView({ behavior:'smooth', block:'start' });
+          target.setAttribute('tabindex','-1');
+          target.focus({ preventScroll:true });
+          document.querySelectorAll('nav a').forEach(a => a.removeAttribute('aria-current'));
+          link.setAttribute('aria-current','true');
+        }
       });
-    }
-
-    function showProjectDetails(p){
-      const html = `
-        <div class="card" style="max-width:760px">
-          <div style="height:140px;border-radius:14px;background:var(--ring);margin-bottom:12px"></div>
-          <div style="display:grid;gap:12px;grid-template-columns:1fr 1fr">
-            <div>
-              <div><strong>Problem:</strong> ${p.problem}</div>
-              <div style="margin-top:6px"><strong>Solution:</strong> ${p.solution}</div>
-            </div>
-            <div>
-              <div><strong>Stack:</strong></div>
-              <div class="stack" style="margin-top:6px">${(p.stack||[]).map(s=>`<span class="chip">${s}</span>`).join("")}</div>
-              <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
-                ${p.links?.demo && p.links.demo !== "#" ? `<a class="btn-sm" href="${p.links.demo}" target="_blank" rel="noreferrer">Demo</a>` : ""}
-                ${p.links?.repo && p.links.repo !== "#" ? `<a class="btn-sm" href="${p.links.repo}" target="_blank" rel="noreferrer">Repo</a>` : ""}
-                ${p.links?.docs && p.links.docs !== "#" ? `<a class="btn-sm" href="${p.links.docs}" target="_blank" rel="noreferrer">Docs</a>` : ""}
-                ${p.links?.pbix && p.links.pbix !== "#" ? `<a class="btn-sm" href="${p.links.pbix}" target="_blank" rel="noreferrer">PBIX</a>` : ""}
-              </div>
-            </div>
-          </div>
-        </div>
-      `;
-      const box = document.createElement("div");
-      Object.assign(box.style, {position:"fixed", inset:"0", background:"rgba(0,0,0,.86)", display:"grid", placeItems:"center", padding:"16px", zIndex:"220"});
-      box.innerHTML = `<div>${html}<div style="text-align:center;margin-top:10px"><button class="btn ghost">Close</button></div></div>`;
-      box.addEventListener("click", e => { if(e.target === box) document.body.removeChild(box); });
-      box.querySelector("button")?.addEventListener("click", ()=> document.body.removeChild(box));
-      document.body.appendChild(box);
-    }
-
-    function renderGallery(){
-      const wrap = $("#gallery");
-      wrap.innerHTML = "";
-      SAMPLES.forEach((s, idx) => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "g-item";
-        b.innerHTML = `<img src="${s.src}" alt="${s.alt}"><span class="label">${s.alt}</span>`;
-        b.addEventListener("click", ()=> openLightbox(idx));
-        wrap.appendChild(b);
-      });
-    }
-
-    // -------- Lightbox --------
-    const lb = $("#lightbox");
-    const lbImg = $("#lbImg");
-    const lbCap = $("#lbCap");
-    let lbIndex = 0;
-    function openLightbox(i){
-      lbIndex = i;
-      lbImg.src = SAMPLES[i].src;
-      lbImg.alt = SAMPLES[i].alt;
-      lbCap.textContent = SAMPLES[i].alt;
-      lb.classList.add("open");
-      lb.setAttribute("aria-hidden","false");
-    }
-    function closeLightbox(){
-      lb.classList.remove("open");
-      lb.setAttribute("aria-hidden","true");
-    }
-    $("#lbClose").addEventListener("click", closeLightbox);
-    $("#lbPrev").addEventListener("click", e => { e.stopPropagation(); lbIndex = (lbIndex + SAMPLES.length - 1) % SAMPLES.length; openLightbox(lbIndex); });
-    $("#lbNext").addEventListener("click", e => { e.stopPropagation(); lbIndex = (lbIndex + 1) % SAMPLES.length; openLightbox(lbIndex); });
-    lb.addEventListener("click", e => { if(e.target === lb) closeLightbox(); });
-    window.addEventListener("keydown", e => {
-      if(lb.classList.contains("open")){
-        if(e.key === "Escape") closeLightbox();
-        if(e.key === "ArrowRight") { lbIndex = (lbIndex + 1) % SAMPLES.length; openLightbox(lbIndex); }
-        if(e.key === "ArrowLeft") { lbIndex = (lbIndex + SAMPLES.length - 1) % SAMPLES.length; openLightbox(lbIndex); }
-      }
     });
 
-    // -------- Init --------
-    document.getElementById("year").textContent = new Date().getFullYear();
-    setLink("#lnLinkedIn", CONTACT.links.linkedin);
-    setLink("#lnGitHub", CONTACT.links.github);
-    setLink("#lnFolder", CONTACT.links.portfolioFolder);
-    setLink("#lnResume", CONTACT.links.resume);
-    setLink("#ctaFolder", CONTACT.links.portfolioFolder);
-    setLink("#ftLinkedIn", CONTACT.links.linkedin);
-    setLink("#ftGitHub", CONTACT.links.github);
-    setLink("#ftFolder", CONTACT.links.portfolioFolder);
+    // Fade-ins
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    document.getElementById("copyPhone").addEventListener("click", async ()=>{
-      try{
-        await (navigator.clipboard?.writeText(CONTACT.phone));
-        alert("Phone copied: " + CONTACT.phone);
-      }catch{ alert(CONTACT.phone); }
-    });
+    // Tiltify (no WebGL)
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function tiltify(selector, maxX=10, maxY=12){
+      if (prefersReduced || !window.matchMedia('(hover:hover)').matches) return;
+      document.querySelectorAll(selector).forEach(el=>{
+        el.classList.add('tiltable');
+        let raf=null;
+        const onMove = (e)=>{
+          const rect = el.getBoundingClientRect();
+          const x = (e.clientX - rect.left)/rect.width;
+          const y = (e.clientY - rect.top)/rect.height;
+          const rx = (0.5 - y) * (maxX*2);
+          const ry = (x - 0.5) * (maxY*2);
+          el.style.setProperty('--mx', (x*100).toFixed(2)+'%');
+          el.style.setProperty('--my', (y*100).toFixed(2)+'%');
+          if (raf) cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(()=>{
+            el.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateZ(0)`;
+            el.classList.add('tilt-active');
+            el.style.boxShadow = '0 18px 45px rgba(0,0,0,.18)';
+          });
+        };
+        const reset = ()=>{
+          if (raf) cancelAnimationFrame(raf);
+          el.style.transform = 'rotateX(0) rotateY(0)';
+          el.classList.remove('tilt-active');
+          el.style.boxShadow = '';
+        };
+        el.addEventListener('mousemove', onMove);
+        el.addEventListener('mouseleave', reset);
+      });
+    }
+    tiltify('.project-card, .sample-card', 8, 10);
+    tiltify('.profile-img', 6, 6);
 
-    renderProjects();
-    renderGallery();
+    // Parallax the flow background slightly on scroll
+    (function(){
+      if (prefersReduced) return;
+      const flow = document.querySelector('.flow-bg');
+      if (!flow) return;
+      window.addEventListener('scroll', ()=>{
+        const y = window.scrollY || document.documentElement.scrollTop;
+        flow.style.transform = `translateY(${(y*0.04).toFixed(1)}px)`;
+      });
+    })();
 
-    // -------- Self-checks (won't crash) --------
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => { if (window.scrollY > 500) toTop.classList.add('show'); else toTop.classList.remove('show'); });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Lightbox
+    (function(){
+      const imgs = Array.from(document.querySelectorAll('.sample-card img'));
+      if (!imgs.length) return;
+      const lb = document.getElementById('lightbox');
+      const lbImg = lb.querySelector('img');
+      const lbCap = lb.querySelector('figcaption');
+      const prevBtn = lb.querySelector('.prev');
+      const nextBtn = lb.querySelector('.next');
+      const closeBtn = lb.querySelector('.close');
+      let idx = 0;
+      function show(i){
+        idx = (i + imgs.length) % imgs.length;
+        const img = imgs[idx];
+        lbImg.src = img.getAttribute('src');
+        lbImg.alt = img.getAttribute('alt') || '';
+        lbCap.textContent = img.getAttribute('alt') || '';
+        lb.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){ lb.classList.remove('show'); document.body.style.overflow=''; }
+      imgs.forEach((img,i)=> img.addEventListener('click', ()=> show(i)) );
+      prevBtn.addEventListener('click', ()=> show(idx-1));
+      nextBtn.addEventListener('click', ()=> show(idx+1));
+      closeBtn.addEventListener('click', close);
+      lb.addEventListener('click', (e)=>{ if(e.target===lb) close(); });
+      document.addEventListener('keydown',(e)=>{
+        if(!lb.classList.contains('show')) return;
+        if(e.key==='Escape') close();
+        if(e.key==='ArrowRight') show(idx+1);
+        if(e.key==='ArrowLeft') show(idx-1);
+      });
+    })();
+
+    // Year + tiny self-checks (console warnings only)
+    document.getElementById('year').textContent = new Date().getFullYear();
     (function selfTests(){
-      const req = ["linkedin","github","portfolioFolder","resume"];
-      req.forEach(k => { if(!(k in CONTACT.links)) console.warn("TEST: missing link key", k); });
-      SAMPLES.forEach(s => { if(!s.src) console.warn("TEST: bad sample src", s); });
+      const imgs = ["DailyETL.png","GetTwitter.png","Marketing Insight Loop. Data-to-Action Flow.png","Present1.png","Present2.png","PowerPagesForExternal.png"];
+      imgs.forEach(n => {
+        const el = document.querySelector(`img[src="${n}"]`);
+        if(!el) console.warn("Missing sample reference:", n);
+      });
     })();
   </script>
+
+  <!-- IMPORTANT: The previous Three.js <script type="module"> block was removed
+       to eliminate 'TypeError: Cannot read properties of undefined (reading "source")'.
+       If you *really* want progressive 3D later, we can re-add it behind a strict WebGL check. -->
 </body>
 </html>
