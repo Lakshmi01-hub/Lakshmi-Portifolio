@@ -1,3 +1,5 @@
+https://lakshmi01-hub.github.io/Lakshmi-Portifolio/
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +9,13 @@
 
   <!-- SEO -->
   <meta name="description" content="Microsoft 365 Application Developer specializing in SharePoint Online, Power Platform (Power Apps, Power Automate, Power BI, Power Pages), SPFx, and .NET/SQL integrations." />
-  <link rel="canonical" href="https://lakshmi01-hub.github.io/Lakshmi-Portifolio/" />
+  <link rel="canonical" href="https://<your-username>.github.io/" />
 
   <!-- Social cards -->
   <meta property="og:title" content="Lakshmi Praneetha Achanta — Microsoft 365 Application Developer" />
   <meta property="og:description" content="SharePoint · Power Platform · SPFx · .NET/SQL · Azure DevOps" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lakshmi01-hub.github.io/Lakshmi-Portifolio/" />
+  <meta property="og:url" content="https://<your-username>.github.io/" />
   <meta property="og:image" content="profile-photo.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Lakshmi Praneetha Achanta — Microsoft 365 Application Developer" />
@@ -50,6 +52,14 @@
       color:#000;padding:.6rem .8rem;border-radius:.5rem;box-shadow:0 4px 20px rgba(0,0,0,.15);z-index:2000
     }
 
+    /* Brand ribbon */
+    .brand-ribbon{margin-top:.6rem;display:flex;gap:.6rem;flex-wrap:wrap}
+    .brand-ribbon .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;color:#fff}
+    .brand-ribbon .apps{background:#742774}
+    .brand-ribbon .automate{background:#0078D4}
+    .brand-ribbon .bi{background:#F2C811;color:#111}
+    .brand-ribbon .sp{background:#03787C}
+
     /* Flow background (Power Automate vibe) */
     .flow-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35}
     .flow-bg svg{width:100%;height:100%}
@@ -82,12 +92,8 @@
     .header-text h1{font-size:3rem;margin-bottom:.5rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
     .subtitle{font-size:1.5rem;margin-bottom:1rem;opacity:.92}
     .location{font-size:1.1rem;opacity:.85;margin-bottom:1rem}
-    .brand-ribbon{margin-top:.6rem;display:flex;gap:.6rem;flex-wrap:wrap}
-    .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;color:#fff}
-    .apps{background:#742774}.automate{background:#0078D4}.bi{background:#F2C811;color:#111}.sp{background:#03787C}
-    /* NEW — core tech badges you asked for */
-    .tech-ribbon{margin-top:.6rem;display:flex;gap:.5rem;flex-wrap:wrap}
-    .tech{border:1px solid rgba(255,255,255,.6);color:#fff;border-radius:999px;padding:.28rem .6rem;font-size:.8rem;backdrop-filter:blur(6px);background:rgba(0,0,0,.12)}
+    .contact-info{display:flex;gap:1rem;flex-wrap:wrap}
+    .contact-info span{background:rgba(255,255,255,.2);padding:.5rem 1rem;border-radius:25px;backdrop-filter:blur(10px)}
 
     .ms-badge{
       position:absolute;top:20px;right:20px;background:rgba(255,255,255,.2);padding:1rem;border-radius:15px;
@@ -107,24 +113,24 @@
     /* Layout */
     main{max-width:1200px;margin:0 auto;padding:0 2rem}
     section{margin:4rem 0;padding:2rem 0;scroll-margin-top:88px}
-    h2{font-size:2.2rem;margin-bottom:2rem;color:#2c3e50;text-align:center;position:relative}
+    h2{font-size:2.5rem;margin-bottom:2rem;color:#2c3e50;text-align:center;position:relative}
     h2::after{content:'';width:100px;height:4px;background:linear-gradient(90deg,var(--primary),var(--primary-2));
       display:block;margin:1rem auto;border-radius:2px}
 
-    /* Skills/Caps */
+    /* Skills */
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
     .skill-category{
       background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);padding:2rem;border-radius:15px;
       box-shadow:0 5px 15px rgba(0,0,0,.08);transition:transform .3s
     }
     .skill-category:hover{transform:translateY(-5px)}
-    .skill-category h3{color:var(--primary);margin-bottom:1rem;font-size:1.1rem}
+    .skill-category h3{color:var(--primary);margin-bottom:1rem;font-size:1.15rem}
     .skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
     .skill-tag{background:var(--primary);color:#fff;padding:.3rem .8rem;border-radius:20px;font-size:.9rem;font-weight:500}
     .skill-tag.featured{background:linear-gradient(135deg,#ff6b6b,#ffa500);animation:pulse 2s infinite}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.85}}
 
-    /* Experience timeline */
+    /* Experience */
     .experience-timeline{position:relative;padding-left:2rem}
     .experience-timeline::before{
       content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--primary),var(--primary-2))
@@ -158,8 +164,7 @@
     /* Work Samples */
     .samples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.5rem;margin-top:1rem}
     .sample-card{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:1rem}
-    .sample-card img{width:100%;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);aspect-ratio:16/9;object-fit:cover;cursor:zoom-in;transition:transform .2s}
-    .sample-card img:hover{transform:scale(1.02)}
+    .sample-card img{width:100%;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);aspect-ratio:16/9;object-fit:cover;cursor:zoom-in}
     .sample-card figcaption{margin-top:.6rem;font-size:.95rem}
 
     /* Lightbox */
@@ -172,6 +177,18 @@
     .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(17,17,17,.7);border:1px solid #444;color:#fff;width:42px;height:42px;border-radius:999px;cursor:pointer}
     .lightbox .prev{left:-56px}
     .lightbox .next{right:-56px}
+
+    /* 3D hero canvas */
+    #hero3d{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.65}
+
+    /* Education */
+    .education-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
+    .education-card{
+      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:2rem;border-radius:15px;text-align:center
+    }
+    .education-card h3{margin-bottom:1rem}
+    .institution{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+    .year{opacity:.9}
 
     /* CTA */
     .cta-section{
@@ -189,7 +206,7 @@
     /* Footer */
     footer{background:#2c3e50;color:#fff;text-align:center;padding:2rem}
 
-    /* 3D Tilt + Parallax (no WebGL needed) */
+    /* 3D Tilt + Parallax */
     .tiltable{position:relative;transform-style:preserve-3d;will-change:transform,box-shadow;transition:transform .2s ease, box-shadow .2s ease}
     .tiltable::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.35), transparent 45%);opacity:0;transition:opacity .2s ease;pointer-events:none}
     .tilt-active::after{opacity:.35}
@@ -221,12 +238,13 @@
       :root{--ink:#e7e7e7;--bg:#0b0b0d;--card:#111218;--muted:#1a2230}
       .skill-category{box-shadow:0 8px 26px rgba(0,0,0,.35)}
       .project-card{background:#0f1218;box-shadow:0 10px 28px rgba(0,0,0,.35)}
-      .experience-item{background:#0f1218;box-shadow:0 10px 28px rgba(0,0,0,.35)}
       .education-card{box-shadow:0 10px 28px rgba(0,0,0,.35)}
+      .experience-item{background:#0f1218;box-shadow:0 10px 28px rgba(0,0,0,.35)}
       .cta-button{background:#111827;color:#fff;border:1px solid #2b3445}
       .to-top{background:#0f1218;color:#fff;border-color:#2b3445}
     }
 
+    /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce){
       *{animation:none !important;transition:none !important;scroll-behavior:auto}
       .profile-img{animation:none}
@@ -259,26 +277,19 @@
   <a href="#about" class="skip-link">Skip to content</a>
 
   <header>
+    <div id="hero3d" aria-hidden="true"></div>
     <div class="header-content">
+      <!-- Replace with your image. If not available, this circle still looks fine -->
       <img src="profile-photo.jpg" alt="Portrait of Lakshmi Praneetha Achanta" class="profile-img" loading="lazy" />
       <div class="header-text">
         <h1>Lakshmi Praneetha Achanta</h1>
         <div class="subtitle">SharePoint &amp; Power Platform apps that cut manual work and surface KPIs fast.</div>
         <div class="location">📍 New Jersey, 08817</div>
-
         <div class="brand-ribbon">
           <span class="chip apps">Power Apps</span>
           <span class="chip automate">Power Automate</span>
           <span class="chip bi">Power BI</span>
           <span class="chip sp">SharePoint</span>
-        </div>
-        <!-- NEW core tech row -->
-        <div class="tech-ribbon" aria-label="Core tools">
-          <span class="tech">.NET (C#)</span>
-          <span class="tech">SPFx / TypeScript</span>
-          <span class="tech">SQL Server</span>
-          <span class="tech">PowerShell</span>
-          <span class="tech">Azure DevOps (ALM)</span>
         </div>
       </div>
     </div>
@@ -305,10 +316,10 @@
     <section id="about" class="fade-in" tabindex="-1">
       <h2>About Me</h2>
       <div style="background: var(--card); padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; font-size: 1.1rem; line-height: 1.8;">
-        <p><strong>I design and ship Microsoft 365 solutions</strong> that turn manual work into Power Apps, Power Automate flows, and SharePoint experiences that people actually use. I’m comfortable across the stack—SPFx (TypeScript), .NET/C# integrations, SQL modeling, and Power BI dashboards with DAX/RLS—while keeping governance in mind with Purview, DLP, and clear documentation.</p>
-        <br />
-        <p><strong>What that looks like lately:</strong> model-driven apps for access requests and recerts; canvas apps for field teams; automated approvals with Teams Adaptive Cards; Power BI exec views; SPFx micro-dashboards; and Azure DevOps pipelines for ALM/CI-CD so changes move cleanly from Dev → Test → Prod.</p>
-      </div>
+  <p><strong>I design and ship Microsoft 365 solutions</strong> that turn manual work into Power Apps, Power Automate flows, and SharePoint experiences that people actually use. I’m comfortable across the stack—SPFx (TypeScript), .NET/C# integrations, SQL modeling, and Power BI dashboards with DAX/RLS—while keeping governance in mind with Purview, DLP, and clear documentation.</p>
+  <br />
+  <p><strong>What that looks like lately:</strong> model-driven apps for access requests and recerts; canvas apps for field teams; automated approvals with Teams Adaptive Cards; Power BI exec views; SPFx micro-dashboards; and Azure DevOps pipelines for ALM/CI-CD so changes move cleanly from Dev → Test → Prod.</p>
+</div>
     </section>
 
     <section id="skills" class="fade-in" tabindex="-1">
@@ -406,52 +417,57 @@
     </section>
 
     <section id="projects" class="fade-in" tabindex="-1">
-      <h2>Projects</h2>
       <div class="projects-grid">
-        <div class="project-card tiltable">
+        <div class="project-card">
           <h3>🧭 M365 Compliance Hub</h3>
           <p>Central place for retention labels, DLP alerts, and exception approvals. Power Automate routes reviews; Power BI reports show exposure and status; SharePoint stores auditable decisions.</p>
           <div class="project-tech"><span class="tech-tag">Microsoft Purview</span><span class="tech-tag">Power Automate</span><span class="tech-tag">Power BI</span><span class="tech-tag">SharePoint Online</span></div>
         </div>
-        <div class="project-card tiltable">
-          <h3>🚚 SharePoint On-Prem → Online Migration</h3>
-          <p>Inventory, map, and migrate sites/lists to SharePoint Online with content types and modern permissions. Post-cutover health checks and redirect plan included.</p>
+        <div class="project-card">
+          <h3>🚚 SharePoint On‑Prem → Online Migration</h3>
+          <p>Inventory, map, and migrate sites/lists to SharePoint Online with content types and modern permissions. Post‑cutover health checks and redirect plan included.</p>
           <div class="project-tech"><span class="tech-tag">SharePoint Migration</span><span class="tech-tag">Content Types</span><span class="tech-tag">Modern Auth</span><span class="tech-tag">Site Scripts</span></div>
         </div>
-        <div class="project-card tiltable">
+        <div class="project-card">
           <h3>🔐 Access Recertification & Site Provisioning</h3>
-          <p>Model-driven app to request/approve SharePoint site access and run quarterly recerts. Teams adaptive cards collect approvals; Graph checks membership; Dataverse keeps the log.</p>
-          <div class="project-tech"><span class="tech-tag">Power Apps (Model-Driven)</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Microsoft Graph</span><span class="tech-tag">Teams</span><span class="tech-tag">SharePoint Online</span></div>
+          <p>Model‑driven app to request/approve SharePoint site access and run quarterly recerts. Teams adaptive cards collect approvals; Graph checks membership; Dataverse keeps the log.</p>
+          <div class="project-tech"><span class="tech-tag">Power Apps (Model‑Driven)</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Microsoft Graph</span><span class="tech-tag">Teams</span><span class="tech-tag">SharePoint Online</span></div>
         </div>
-        <div class="project-card tiltable">
+        <div class="project-card">
           <h3>🧪 Data Quality & Drift Monitor</h3>
           <p>Scheduled flows snapshot key tables, hash and compare, and raise a Teams alert with a sparkline when values drift. Optional AI Builder sentiment for text fields.</p>
           <div class="project-tech"><span class="tech-tag">Power Automate</span><span class="tech-tag">AI Builder</span><span class="tech-tag">Power BI</span><span class="tech-tag">Teams</span></div>
         </div>
-        <div class="project-card tiltable">
+        <div class="project-card">
           <h3>🌐 Client Project View Portal</h3>
           <p>External Power Pages portal where clients track milestones, deliverables, and KPIs. Embeds Power BI and writes feedback to SharePoint/Dataverse.</p>
           <div class="project-tech"><span class="tech-tag">Power Pages</span><span class="tech-tag">Power BI Embed</span><span class="tech-tag">Dataverse</span><span class="tech-tag">SharePoint</span></div>
         </div>
-        <div class="project-card tiltable">
+        <div class="project-card">
           <h3>📈 Marketing Insight Loop</h3>
-          <p>Azure Data Factory pulls CRM and ad-platform data; curated tables feed Power BI; Teams cards prompt budget tweaks and log outcomes.</p>
+          <p>Azure Data Factory pulls CRM and ad‑platform data; curated tables feed Power BI; Teams cards prompt budget tweaks and log outcomes.</p>
           <div class="project-tech"><span class="tech-tag">Azure Data Factory</span><span class="tech-tag">Power BI</span><span class="tech-tag">SharePoint</span><span class="tech-tag">Teams Adaptive Cards</span></div>
         </div>
-        <div class="project-card tiltable">
+        <div class="project-card">
           <h3>🧩 Legacy App → Power Platform Migration</h3>
           <p>Rebuilt spreadsheets/forms as Power Apps; moved data to Dataverse/SharePoint; replaced nightly jobs with Power Automate; added Power BI KPIs.</p>
           <div class="project-tech"><span class="tech-tag">Power Apps</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Power Automate</span><span class="tech-tag">Power BI</span></div>
         </div>
-        <div class="project-card tiltable">
+        <div class="project-card">
           <h3>🧷 SharePoint ↔ SQL Integration Service</h3>
           <p>Lightweight .NET service moves curated data between SharePoint lists/Dataverse and SQL for analytics and retention. Includes retry logic, error logging, and idempotent upserts; surfaced via SPFx cards and monitored in Power BI.</p>
-          <div class="project-tech"><span class="tech-tag">.NET (C#)</span><span class="tech-tag">SQL Server</span><span class="tech-tag">SharePoint / Dataverse</span><span class="tech-tag">SPFx</span></div>
+          <div class="project-tech">
+            <span class="tech-tag">.NET (C#)</span><span class="tech-tag">SQL Server</span>
+            <span class="tech-tag">SharePoint / Dataverse</span><span class="tech-tag">SPFx</span>
+          </div>
         </div>
-        <div class="project-card tiltable">
+        <div class="project-card">
           <h3>🛠️ ALM &amp; CI/CD for Power Platform</h3>
           <p>Solution-based ALM with Azure DevOps pipelines: unpack/pack, environment variables, connection refs, automated solution export/import, and approvals. Clean promotion Dev → Test → Prod with audit history.</p>
-          <div class="project-tech"><span class="tech-tag">Azure DevOps</span><span class="tech-tag">Power Platform ALM</span><span class="tech-tag">PowerShell</span><span class="tech-tag">Git</span></div>
+          <div class="project-tech">
+            <span class="tech-tag">Azure DevOps</span><span class="tech-tag">Power Platform ALM</span>
+            <span class="tech-tag">PowerShell</span><span class="tech-tag">Git</span>
+          </div>
         </div>
       </div>
     </section>
@@ -459,27 +475,27 @@
     <section id="samples" class="fade-in" tabindex="-1">
       <h2>Work Samples</h2>
       <div class="samples-grid">
-        <figure class="sample-card tiltable">
+        <figure class="sample-card">
           <img src="Marketing Insight Loop. Data-to-Action Flow.png" alt="Marketing Insight Loop. Data-to-Action Flow" loading="lazy" />
           <figcaption><strong>Marketing Insight Loop. Data-to-Action Flow</strong></figcaption>
         </figure>
-        <figure class="sample-card tiltable">
+        <figure class="sample-card">
           <img src="DailyETL.png" alt="Daily ETL" loading="lazy" />
           <figcaption><strong>Daily ETL</strong></figcaption>
         </figure>
-        <figure class="sample-card tiltable">
+        <figure class="sample-card">
           <img src="GetTwitter.png" alt="GetTwitter" loading="lazy" />
           <figcaption><strong>GetTwitter</strong></figcaption>
         </figure>
-        <figure class="sample-card tiltable">
+        <figure class="sample-card">
           <img src="Present2.png" alt="Latency vs Packet Loss bubble map" loading="lazy" />
           <figcaption><strong>Latency vs Packet Loss</strong> (Power BI)</figcaption>
         </figure>
-        <figure class="sample-card tiltable">
+        <figure class="sample-card">
           <img src="Present1.png" alt="Network overview dashboard showing latency, packet loss, battery and signal strength" loading="lazy" />
           <figcaption><strong>Network Overview</strong> (Power BI)</figcaption>
         </figure>
-        <figure class="sample-card tiltable">
+        <figure class="sample-card">
           <img src="PowerPagesForExternal.png" alt="Client Project View portal screenshot" loading="lazy" />
           <figcaption><strong>Client Project View</strong> (Power Pages)</figcaption>
         </figure>
@@ -489,8 +505,8 @@
 
     <section id="education" class="fade-in" tabindex="-1">
       <h2>Education & Certifications</h2>
-      <div class="skills-grid">
-        <div class="skill-category" style="text-align:center;color:#fff;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)">
+      <div class="education-grid">
+        <div class="education-card">
           <h3>🎓 Master of Information Systems</h3>
           <div class="institution">Stevens Institute of Technology</div>
           <div class="year">May 2024 | Hoboken, New Jersey</div>
@@ -498,7 +514,7 @@
             Strategic Project Management | IT Strategies | Business Analytics | Data Visualization | Financial Decision Making
           </p>
         </div>
-        <div class="skill-category" style="text-align:center;color:#fff;background:linear-gradient(135deg,#764ba2 0%,#9a5bd1 100%)">
+        <div class="education-card">
           <h3>🎓 Bachelor of Business Administration</h3>
           <div class="institution">KL University</div>
           <div class="year">Vijayawada, India</div>
@@ -509,13 +525,11 @@
     <section id="contact" class="cta-section fade-in" tabindex="-1">
       <h2>Let’s build something useful</h2>
       <p style="font-size:1.2rem;margin-bottom:2rem">
-        Let's talk SharePoint sites, Power Apps, and automation. I can show quick demos and discuss trade-offs for your team.
+        Let's talk SharePoint sites, Power Apps, and automation. I can show quick demos and discuss trade‑offs for your team.
       </p>
       <a href="mailto:lakshmiachanta2000@gmail.com?subject=Microsoft 365 Developer Opportunity" class="cta-button">📧 Let's Connect</a>
     </section>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
       <div class="frame">
         <button class="close" aria-label="Close">×</button>
         <button class="nav prev" aria-label="Previous">‹</button>
@@ -527,7 +541,7 @@
   </main>
 
   <footer role="contentinfo">
-    <p>&copy; <span id="year"></span> Lakshmi Praneetha Achanta | Microsoft 365 Application Developer | Transforming Business Through Technology</p>
+    <p>&copy; 2025 Lakshmi Praneetha Achanta | Microsoft 365 Application Developer | Transforming Business Through Technology</p>
   </footer>
 
   <button class="to-top" id="toTop" aria-label="Back to top">↑ Top</button>
@@ -542,40 +556,18 @@
     "email":"mailto:lakshmiachanta2000@gmail.com",
     "telephone":"+1-917-847-0703",
     "address":{"@type":"PostalAddress","addressRegion":"NJ","addressCountry":"US"},
-    "url":"https://lakshmi01-hub.github.io/Lakshmi-Portifolio/",
+    "url":"https://<your-username>.github.io/",
     "sameAs":[
       "https://www.linkedin.com/in/<your-handle>",
-      "https://github.com/lakshmi01-hub"
+      "https://github.com/<your-username>"
     ]
   }
   </script>
 
   <script>
-    // Mark current nav + smooth scroll + focus
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', e => {
-        const href = link.getAttribute('href');
-        if (!href || !href.startsWith('#')) return;
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target){
-          target.scrollIntoView({ behavior:'smooth', block:'start' });
-          target.setAttribute('tabindex','-1');
-          target.focus({ preventScroll:true });
-          document.querySelectorAll('nav a').forEach(a => a.removeAttribute('aria-current'));
-          link.setAttribute('aria-current','true');
-        }
-      });
-    });
-
-    // Fade-ins
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.style.animationPlayState = 'running'; });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Tiltify (no WebGL)
+    // 3D tilt & flow parallax (no libraries)
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     function tiltify(selector, maxX=10, maxY=12){
       if (prefersReduced || !window.matchMedia('(hover:hover)').matches) return;
       document.querySelectorAll(selector).forEach(el=>{
@@ -606,7 +598,9 @@
         el.addEventListener('mouseleave', reset);
       });
     }
-    tiltify('.project-card, .sample-card', 8, 10);
+
+    // Apply tilt to key elements
+    tiltify('.project-card, .sample-card, .education-card', 8, 10);
     tiltify('.profile-img', 6, 6);
 
     // Parallax the flow background slightly on scroll
@@ -620,58 +614,152 @@
       });
     })();
 
-    // Back to top
+    // Smooth scroll with focus management (keeps anchors visible under sticky nav)
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (!href || !href.startsWith('#')) return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target){
+          target.scrollIntoView({ behavior:'smooth', block:'start' });
+          // move focus for accessibility
+          target.setAttribute('tabindex','-1');
+          target.focus({ preventScroll:true });
+          // mark current
+          document.querySelectorAll('nav a').forEach(a => a.removeAttribute('aria-current'));
+          link.setAttribute('aria-current','true');
+        }
+      });
+    });
+
+    // IntersectionObserver to play fade-ins
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Subtitle is static; typing effect removed for cleaner tone.
+
+    // Back to top button
     const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => { if (window.scrollY > 500) toTop.classList.add('show'); else toTop.classList.remove('show'); });
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) toTop.classList.add('show'); else toTop.classList.remove('show');
+    });
     toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    // Lightbox
-    (function(){
-      const imgs = Array.from(document.querySelectorAll('.sample-card img'));
-      if (!imgs.length) return;
-      const lb = document.getElementById('lightbox');
-      const lbImg = lb.querySelector('img');
-      const lbCap = lb.querySelector('figcaption');
-      const prevBtn = lb.querySelector('.prev');
-      const nextBtn = lb.querySelector('.next');
-      const closeBtn = lb.querySelector('.close');
-      let idx = 0;
-      function show(i){
-        idx = (i + imgs.length) % imgs.length;
-        const img = imgs[idx];
-        lbImg.src = img.getAttribute('src');
-        lbImg.alt = img.getAttribute('alt') || '';
-        lbCap.textContent = img.getAttribute('alt') || '';
-        lb.classList.add('show');
-        document.body.style.overflow = 'hidden';
-      }
-      function close(){ lb.classList.remove('show'); document.body.style.overflow=''; }
-      imgs.forEach((img,i)=> img.addEventListener('click', ()=> show(i)) );
-      prevBtn.addEventListener('click', ()=> show(idx-1));
-      nextBtn.addEventListener('click', ()=> show(idx+1));
-      closeBtn.addEventListener('click', close);
-      lb.addEventListener('click', (e)=>{ if(e.target===lb) close(); });
-      document.addEventListener('keydown',(e)=>{
-        if(!lb.classList.contains('show')) return;
-        if(e.key==='Escape') close();
-        if(e.key==='ArrowRight') show(idx+1);
-        if(e.key==='ArrowLeft') show(idx-1);
-      });
-    })();
-
-    // Year + tiny self-checks (console warnings only)
-    document.getElementById('year').textContent = new Date().getFullYear();
-    (function selfTests(){
-      const imgs = ["DailyETL.png","GetTwitter.png","Marketing Insight Loop. Data-to-Action Flow.png","Present1.png","Present2.png","PowerPagesForExternal.png"];
-      imgs.forEach(n => {
-        const el = document.querySelector(`img[src="${n}"]`);
-        if(!el) console.warn("Missing sample reference:", n);
-      });
-    })();
   </script>
+<script>
+  // Simple lightbox for Work Samples
+  (function(){
+    const imgs = Array.from(document.querySelectorAll('.sample-card img'));
+    if (!imgs.length) return;
+    const lb = document.getElementById('lightbox');
+    const lbImg = lb.querySelector('img');
+    const lbCap = lb.querySelector('figcaption');
+    const prevBtn = lb.querySelector('.prev');
+    const nextBtn = lb.querySelector('.next');
+    const closeBtn = lb.querySelector('.close');
+    let idx = 0;
+    function show(i){
+      idx = (i + imgs.length) % imgs.length;
+      const img = imgs[idx];
+      lbImg.src = img.getAttribute('src');
+      lbImg.alt = img.getAttribute('alt') || '';
+      lbCap.textContent = img.getAttribute('alt') || '';
+      lb.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    }
+    function close(){ lb.classList.remove('show'); document.body.style.overflow=''; }
+    imgs.forEach((img,i)=> img.addEventListener('click', ()=> show(i)) );
+    prevBtn.addEventListener('click', ()=> show(idx-1));
+    nextBtn.addEventListener('click', ()=> show(idx+1));
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) close(); });
+    document.addEventListener('keydown',(e)=>{
+      if(!lb.classList.contains('show')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowRight') show(idx+1);
+      if(e.key==='ArrowLeft') show(idx-1);
+    });
+  })();
+</script>
+<script type="module">
+  // Lightweight 3D nodes background in the hero using Three.js (progressive enhancement)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    (async () => {
+      try{
+        const THREE = await import('https://unpkg.com/three@0.158.0/build/three.module.js');
+        const container = document.getElementById('hero3d');
+        if(!container) return;
+        const w = container.clientWidth, h = container.clientHeight;
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 1000);
+        camera.position.z = 60;
+        const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(w, h);
+        container.appendChild(renderer.domElement);
 
-  <!-- IMPORTANT: The previous Three.js <script type="module"> block was removed
-       to eliminate 'TypeError: Cannot read properties of undefined (reading "source")'.
-       If you *really* want progressive 3D later, we can re-add it behind a strict WebGL check. -->
+        const group = new THREE.Group();
+        scene.add(group);
+        const nodes = [];
+        const bounds = 28;
+        const nodeGeo = new THREE.SphereGeometry(0.7, 16, 16);
+        const nodeMat = new THREE.MeshBasicMaterial({ color: 0x0078D4 }); // Automate blue
+        for(let i=0;i<26;i++){
+          const m = new THREE.Mesh(nodeGeo, nodeMat.clone());
+          m.position.set((Math.random()*2-1)*bounds, (Math.random()*2-1)*bounds*0.6, (Math.random()*2-1)*bounds);
+          m.userData.v = new THREE.Vector3((Math.random()-0.5)*0.2, (Math.random()-0.5)*0.2, (Math.random()-0.5)*0.2);
+          group.add(m); nodes.push(m);
+        }
+        const lineMat = new THREE.LineBasicMaterial({ color: 0x742774, transparent:true, opacity:0.5 }); // Power Apps purple
+        const lineGeo = new THREE.BufferGeometry();
+        const maxSeg = nodes.length*nodes.length*2;
+        const positions = new Float32Array(maxSeg*3);
+        const lines = new THREE.LineSegments(lineGeo, lineMat);
+        scene.add(lines);
+
+        function updateLines(){
+          let idx = 0;
+          for(let i=0;i<nodes.length;i++){
+            for(let j=i+1;j<nodes.length;j++){
+              const a = nodes[i].position, b = nodes[j].position;
+              const d = a.distanceTo(b);
+              if(d < 15){
+                positions[idx++] = a.x; positions[idx++] = a.y; positions[idx++] = a.z;
+                positions[idx++] = b.x; positions[idx++] = b.y; positions[idx++] = b.z;
+              }
+            }
+          }
+          lineGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+          lineGeo.setDrawRange(0, idx);
+          lineGeo.attributes.position.needsUpdate = true;
+        }
+
+        function animate(){
+          requestAnimationFrame(animate);
+          nodes.forEach(n=>{
+            n.position.add(n.userData.v);
+            ['x','y','z'].forEach(k=>{
+              if(n.position[k] > bounds){ n.position[k] = bounds; n.userData.v[k]*=-1; }
+              if(n.position[k] < -bounds){ n.position[k] = -bounds; n.userData.v[k]*=-1; }
+            });
+          });
+          updateLines();
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', ()=>{
+          const w = container.clientWidth, h = container.clientHeight;
+          renderer.setSize(w, h);
+          camera.aspect = w/h; camera.updateProjectionMatrix();
+        });
+      }catch(e){/* no-op if CDN blocked */}
+    })();
+  }
+</script>
 </body>
 </html>
