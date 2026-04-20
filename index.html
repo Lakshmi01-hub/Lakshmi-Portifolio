@@ -1,769 +1,444 @@
-https://lakshmi01-hub.github.io/Lakshmi-Portifolio/
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lakshmi Praneetha Achanta - Microsoft 365 Application Developer</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Microsoft 365 Application Developer specializing in SharePoint Online, Power Platform (Power Apps, Power Automate, Power BI, Power Pages), SPFx, and .NET/SQL integrations." />
-  <link rel="canonical" href="https://<your-username>.github.io/" />
-
-  <!-- Social cards -->
-  <meta property="og:title" content="Lakshmi Praneetha Achanta — Microsoft 365 Application Developer" />
-  <meta property="og:description" content="SharePoint · Power Platform · SPFx · .NET/SQL · Azure DevOps" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://<your-username>.github.io/" />
-  <meta property="og:image" content="profile-photo.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Lakshmi Praneetha Achanta — Microsoft 365 Application Developer" />
-  <meta name="twitter:description" content="SharePoint · Power Platform · SPFx · .NET/SQL · Azure DevOps" />
-  <meta name="twitter:image" content="profile-photo.jpg" />
-
-  <link rel="icon" href="favicon.png" />
-
-  <style>
-    :root{
-      --primary:#742774; /* Power Apps */
-      --primary-2:#0078D4; /* Power Automate */
-      --primary-3:#03787C; /* SharePoint */
-      --accent-bi:#F2C811; /* Power BI */
-      --ink:#333;
-      --bg:#ffffff;
-      --muted:#1a2230;
-      --card:#ffffff;
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lakshmi Praneetha — Portfolio</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg2: #f7f7f5;
+    --bg3: #f0efeb;
+    --text: #1a1a18;
+    --text2: #6b6a64;
+    --text3: #9b9a94;
+    --border: rgba(0,0,0,0.1);
+    --border2: rgba(0,0,0,0.18);
+    --blue-bg: #E6F1FB; --blue-text: #0C447C; --blue-border: #85B7EB;
+    --green-bg: #EAF3DE; --green-text: #27500A; --green-border: #97C459;
+    --amber-bg: #FAEEDA; --amber-text: #633806; --amber-border: #EF9F27;
+    --purple-bg: #EEEDFE; --purple-text: #3C3489; --purple-border: #AFA9EC;
+    --teal-bg: #E1F5EE; --teal-text: #085041; --teal-border: #5DCAA5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1c1c1a; --bg2: #242422; --bg3: #2c2c2a;
+      --text: #e8e6de; --text2: #a09e96; --text3: #6e6c66;
+      --border: rgba(255,255,255,0.1); --border2: rgba(255,255,255,0.18);
+      --blue-bg: #0C447C; --blue-text: #B5D4F4;
+      --green-bg: #27500A; --green-text: #C0DD97;
+      --amber-bg: #633806; --amber-text: #FAC775;
+      --purple-bg: #3C3489; --purple-text: #CECBF6;
+      --teal-bg: #085041; --teal-text: #9FE1CB;
     }
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      line-height:1.6;color:var(--ink);background:var(--bg);overflow-x:hidden
-    }
-    a{color:inherit}
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg3);color:var(--text);font-size:14px;line-height:1.6;min-height:100vh}
+  .page{max-width:780px;margin:0 auto;padding:24px 16px 60px}
 
-    /* Skip link */
-    .skip-link{
-      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden
-    }
-    .skip-link:focus{
-      position:fixed;left:1rem;top:1rem;width:auto;height:auto;background:#fff;
-      color:#000;padding:.6rem .8rem;border-radius:.5rem;box-shadow:0 4px 20px rgba(0,0,0,.15);z-index:2000
-    }
+  /* HERO */
+  .hero{background:var(--bg);border:0.5px solid var(--border);border-radius:14px;padding:24px;margin-bottom:16px;display:flex;gap:18px;align-items:center}
+  .avatar{width:60px;height:60px;border-radius:50%;background:var(--blue-bg);color:var(--blue-text);font-size:20px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .hero-name{font-size:20px;font-weight:600;margin-bottom:3px}
+  .hero-sub{font-size:13px;color:var(--text2);margin-bottom:10px}
+  .tags{display:flex;flex-wrap:wrap;gap:5px}
+  .tag{font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500;border:0.5px solid transparent}
+  .tag-blue{background:var(--blue-bg);color:var(--blue-text);border-color:var(--blue-border)}
+  .tag-green{background:var(--green-bg);color:var(--green-text);border-color:var(--green-border)}
+  .tag-amber{background:var(--amber-bg);color:var(--amber-text);border-color:var(--amber-border)}
+  .tag-purple{background:var(--purple-bg);color:var(--purple-text);border-color:var(--purple-border)}
+  .tag-teal{background:var(--teal-bg);color:var(--teal-text);border-color:var(--teal-border)}
 
-    /* Brand ribbon */
-    .brand-ribbon{margin-top:.6rem;display:flex;gap:.6rem;flex-wrap:wrap}
-    .brand-ribbon .chip{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:999px;font-size:.85rem;font-weight:600;color:#fff}
-    .brand-ribbon .apps{background:#742774}
-    .brand-ribbon .automate{background:#0078D4}
-    .brand-ribbon .bi{background:#F2C811;color:#111}
-    .brand-ribbon .sp{background:#03787C}
+  /* NAV */
+  .nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;padding:12px 14px;background:var(--bg);border:0.5px solid var(--border);border-radius:10px}
+  .nav button{font-size:12px;padding:5px 14px;border-radius:20px;border:0.5px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;transition:all .15s;font-family:inherit}
+  .nav button.active,.nav button:hover{background:var(--bg2);color:var(--text);border-color:var(--border2)}
+  .nav button.active{font-weight:500}
 
-    /* Flow background (Power Automate vibe) */
-    .flow-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.35}
-    .flow-bg svg{width:100%;height:100%}
-    .flow-line{stroke:url(#flowGrad);stroke-width:2;fill:none;stroke-linecap:round;stroke-dasharray:12 10;animation:dash 14s linear infinite}
-    @keyframes dash{to{stroke-dashoffset:-400}}
-    .flow-node{fill:#fff;stroke:var(--primary-2);stroke-width:2;filter:drop-shadow(0 0 6px rgba(0,120,212,.35))}
-    .flow-pulse{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--accent-bi);box-shadow:0 0 0 8px rgba(242,200,17,.12),0 0 14px rgba(242,200,17,.55)}
-    .pulse1{offset-path:path('M50 120 C300 60 600 160 900 110 S1150 90 1200 160');animation:move1 12s linear infinite}
-    .pulse2{offset-path:path('M0 330 C220 290 480 380 720 320 S980 290 1200 360');animation:move2 16s linear infinite 1s}
-    .pulse3{offset-path:path('M0 580 C240 540 520 620 840 580 S1080 540 1200 600');animation:move3 20s linear infinite .5s}
-    @keyframes move1{to{offset-distance:100%}}
-    @keyframes move2{to{offset-distance:100%}}
-    @keyframes move3{to{offset-distance:100%}}
-    @media (prefers-reduced-motion: reduce){.flow-bg{display:none}}
+  /* SECTIONS */
+  .section{display:none}
+  .section.active{display:block}
 
-    /* Header */
-    header{
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 50%, var(--primary-3) 100%);
-      color:#fff;padding:2.2rem 0;position:relative;overflow:hidden
-    }
-    .header-content{
-      max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:3rem;position:relative;z-index:2
-    }
-    .profile-img{
-      width:200px;height:200px;border-radius:50%;
-      border:5px solid rgba(255,255,255,.3);object-fit:cover;
-      box-shadow:0 10px 30px rgba(0,0,0,.3);animation:float 3s ease-in-out infinite
-    }
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    .header-text h1{font-size:3rem;margin-bottom:.5rem;text-shadow:2px 2px 4px rgba(0,0,0,.3)}
-    .subtitle{font-size:1.5rem;margin-bottom:1rem;opacity:.92}
-    .location{font-size:1.1rem;opacity:.85;margin-bottom:1rem}
-    .contact-info{display:flex;gap:1rem;flex-wrap:wrap}
-    .contact-info span{background:rgba(255,255,255,.2);padding:.5rem 1rem;border-radius:25px;backdrop-filter:blur(10px)}
+  /* CASE CARD */
+  .case-card{background:var(--bg);border:0.5px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:18px}
+  .proj-img{width:100%;height:200px;object-fit:cover;object-position:top;display:block;border-bottom:0.5px solid var(--border)}
+  .proj-img-wrap{position:relative;height:200px;background:var(--bg2);overflow:hidden}
+  .proj-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .img-caption{position:absolute;bottom:0;left:0;right:0;padding:10px 16px;background:linear-gradient(transparent,rgba(0,0,0,0.55))}
+  .img-caption span{font-size:12px;color:#fff;font-weight:500}
+  .case-header{padding:16px 18px 12px;border-bottom:0.5px solid var(--border)}
+  .case-title{font-size:16px;font-weight:600;margin-bottom:3px;margin-top:6px}
+  .case-meta{font-size:12px;color:var(--text2)}
+  .case-body{padding:16px 18px}
 
-    .ms-badge{
-      position:absolute;top:20px;right:20px;background:rgba(255,255,255,.2);padding:1rem;border-radius:15px;
-      backdrop-filter:blur(10px);text-align:center;border:2px solid rgba(255,255,255,.3)
-    }
-    .ms-badge h3{color:#FFD700;margin-bottom:.4rem}
+  /* OBS/RESOLVED/BUILT */
+  .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+  @media(max-width:540px){.story-grid{grid-template-columns:1fr}}
+  .story-box{border-radius:8px;padding:10px 12px;border:0.5px solid transparent}
+  .story-box.observed{background:var(--amber-bg);border-color:var(--amber-border)}
+  .story-box.resolved{background:var(--green-bg);border-color:var(--green-border)}
+  .story-box.built{background:var(--blue-bg);border-color:var(--blue-border)}
+  .story-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+  .story-box.observed .story-label{color:var(--amber-text)}
+  .story-box.resolved .story-label{color:var(--green-text)}
+  .story-box.built .story-label{color:var(--blue-text)}
+  .story-text{font-size:12px;line-height:1.5}
+  .story-box.observed .story-text{color:var(--amber-text)}
+  .story-box.resolved .story-text{color:var(--green-text)}
+  .story-box.built .story-text{color:var(--blue-text)}
 
-    /* Nav */
-    nav{
-      background:var(--muted);padding:1rem 0;position:sticky;top:0;z-index:1000;
-      box-shadow:0 2px 10px rgba(0,0,0,.08)
-    }
-    nav ul{list-style:none;display:flex;justify-content:center;gap:2rem;max-width:1200px;margin:0 auto;padding:0 2rem}
-    nav a{color:#fff;text-decoration:none;padding:.5rem 1rem;border-radius:25px;transition:all .25s}
-    nav a:hover, nav a[aria-current="true"]{background:var(--primary);transform:translateY(-2px)}
+  /* INNOVATION */
+  .innovation{margin:10px 0;padding:12px 14px;border-radius:8px;background:var(--purple-bg);border:0.5px solid var(--purple-border)}
+  .innovation-label{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--purple-text);margin-bottom:4px}
+  .innovation-text{font-size:12px;color:var(--purple-text);line-height:1.55}
 
-    /* Layout */
-    main{max-width:1200px;margin:0 auto;padding:0 2rem}
-    section{margin:4rem 0;padding:2rem 0;scroll-margin-top:88px}
-    h2{font-size:2.5rem;margin-bottom:2rem;color:#2c3e50;text-align:center;position:relative}
-    h2::after{content:'';width:100px;height:4px;background:linear-gradient(90deg,var(--primary),var(--primary-2));
-      display:block;margin:1rem auto;border-radius:2px}
+  /* LABELS */
+  .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin:14px 0 5px}
+  p{font-size:13px;margin-bottom:6px}
 
-    /* Skills */
-    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin-top:2rem}
-    .skill-category{
-      background:linear-gradient(135deg,#f8f9fa 0%,#e9ecef 100%);padding:2rem;border-radius:15px;
-      box-shadow:0 5px 15px rgba(0,0,0,.08);transition:transform .3s
-    }
-    .skill-category:hover{transform:translateY(-5px)}
-    .skill-category h3{color:var(--primary);margin-bottom:1rem;font-size:1.15rem}
-    .skill-tags{display:flex;flex-wrap:wrap;gap:.5rem}
-    .skill-tag{background:var(--primary);color:#fff;padding:.3rem .8rem;border-radius:20px;font-size:.9rem;font-weight:500}
-    .skill-tag.featured{background:linear-gradient(135deg,#ff6b6b,#ffa500);animation:pulse 2s infinite}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.85}}
+  /* FLOW */
+  .flow{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin:6px 0 10px}
+  .flow-step{font-size:12px;padding:4px 10px;background:var(--bg2);border:0.5px solid var(--border);border-radius:6px}
+  .flow-arrow{color:var(--text3);font-size:12px}
 
-    /* Experience */
-    .experience-timeline{position:relative;padding-left:2rem}
-    .experience-timeline::before{
-      content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--primary),var(--primary-2))
-    }
-    .experience-item{
-      position:relative;margin-bottom:3rem;background:var(--card);padding:2rem;border-radius:15px;
-      box-shadow:0 5px 15px rgba(0,0,0,.08);margin-left:2rem
-    }
-    .experience-item::before{
-      content:'';position:absolute;left:-2.75rem;top:2rem;width:15px;height:15px;background:var(--primary);
-      border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 3px var(--primary)
-    }
-    .experience-item h3{color:#2c3e50;margin-bottom:.5rem}
-    .company{color:var(--primary);font-weight:600;margin-bottom:.4rem}
-    .duration{color:#666;font-style:italic;margin-bottom:1rem}
-    .experience-item ul{list-style:none}
-    .experience-item li{margin-bottom:.5rem;padding-left:1.5rem;position:relative}
-    .experience-item li::before{content:'▶';color:var(--primary);position:absolute;left:0}
+  /* MOCKUP */
+  .mock{background:var(--bg2);border-radius:8px;padding:12px;margin:6px 0 4px}
+  .mock-dots{display:flex;gap:5px;margin-bottom:10px}
+  .mock-dot{width:8px;height:8px;border-radius:50%;background:var(--border2)}
+  .kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+  .kpi{background:var(--bg);border:0.5px solid var(--border);border-radius:6px;padding:8px;text-align:center}
+  .kpi-val{font-size:18px;font-weight:600;display:block}
+  .kpi-lbl{font-size:10px;color:var(--text2);display:block;margin-top:1px}
+  .chart-box{background:var(--bg);border:0.5px solid var(--border);border-radius:6px;padding:10px}
+  .chart-lbl{font-size:10px;color:var(--text2);margin-bottom:8px}
+  .bars{display:flex;align-items:flex-end;gap:4px;height:52px}
+  .bar{flex:1;border-radius:2px 2px 0 0;background:#378ADD;opacity:.75}
+  .bar-lbl-row{display:flex;margin-top:4px}
+  .bar-lbl-row span{flex:1;text-align:center;font-size:9px;color:var(--text3)}
+  .portal-inner{background:var(--bg);border:0.5px solid var(--border);border-radius:6px;padding:10px}
+  .portal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+  .portal-title{font-size:12px;font-weight:600}
+  .portal-live{font-size:10px;padding:2px 8px;border-radius:10px;background:var(--blue-bg);color:var(--blue-text)}
+  .portal-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid var(--border);font-size:11px}
+  .portal-row:last-child{border-bottom:none}
+  .portal-row span:last-child{color:var(--text2)}
+  .sdot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:5px;vertical-align:middle}
 
-    /* Projects */
-    .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2rem}
-    .project-card{
-      background:#fff;border-radius:15px;padding:2rem;box-shadow:0 5px 15px rgba(0,0,0,.08);
-      transition:all .3s;border-left:5px solid var(--primary)
-    }
-    .project-card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
-    .project-card h3{color:#2c3e50;margin-bottom:1rem}
-    .project-tech{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
-    .tech-tag{background:#e9f3ff;color:var(--primary);padding:.2rem .6rem;border-radius:15px;font-size:.8rem;font-weight:500}
+  /* AI CARDS */
+  .ai-card{background:var(--bg);border:0.5px solid var(--border);border-radius:8px;padding:10px;margin-bottom:6px}
+  .ai-pill{display:inline-block;font-size:10px;padding:2px 8px;border-radius:10px;background:var(--purple-bg);color:var(--purple-text);margin-bottom:6px;font-weight:500}
+  .ai-desc{font-size:12px;color:var(--text2);line-height:1.5}
+  .ai-output{margin-top:6px;padding:7px 10px;background:var(--bg2);border-radius:4px;font-size:11px;border-left:2px solid #534AB7;line-height:1.5}
 
-    /* Work Samples */
-    .samples-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1.5rem;margin-top:1rem}
-    .sample-card{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.08);padding:1rem}
-    .sample-card img{width:100%;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,.06);aspect-ratio:16/9;object-fit:cover;cursor:zoom-in}
-    .sample-card figcaption{margin-top:.6rem;font-size:.95rem}
+  /* GOVERNANCE GRID */
+  .gov-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:6px 0}
+  @media(max-width:400px){.gov-grid{grid-template-columns:1fr}}
+  .gov-item{padding:9px 11px;background:var(--bg2);border-radius:6px;border:0.5px solid var(--border)}
+  .gov-title{font-size:12px;font-weight:500;margin-bottom:2px}
+  .gov-sub{font-size:11px;color:var(--text2)}
 
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:2000;padding:2rem}
-    .lightbox.show{display:flex}
-    .lightbox .frame{position:relative;max-width:min(1200px,92vw);max-height:86vh}
-    .lightbox img{max-width:100%;max-height:86vh;border-radius:12px;display:block}
-    .lightbox figcaption{margin-top:.6rem;text-align:center;color:#eee;font-size:.95rem}
-    .lightbox .close{position:absolute;top:-10px;right:-10px;background:#111;border:1px solid #444;color:#fff;border-radius:999px;width:36px;height:36px;font-size:20px;cursor:pointer}
-    .lightbox .nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(17,17,17,.7);border:1px solid #444;color:#fff;width:42px;height:42px;border-radius:999px;cursor:pointer}
-    .lightbox .prev{left:-56px}
-    .lightbox .next{right:-56px}
+  /* ALIGNMENT */
+  .align-grid{display:grid;gap:8px}
+  .align-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:var(--bg);border:0.5px solid var(--border);border-radius:10px;padding:10px 14px;font-size:13px;transition:background .12s}
+  @media(max-width:540px){.align-row{grid-template-columns:1fr}}
+  .align-row:hover{background:var(--bg2)}
+  .align-jd{color:var(--text2)}
+  .check{display:inline-flex;width:17px;height:17px;border-radius:50%;background:var(--green-bg);color:var(--green-text);font-size:10px;align-items:center;justify-content:center;margin-right:5px;flex-shrink:0;vertical-align:middle}
 
-    /* 3D hero canvas */
-    #hero3d{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.65}
-
-    /* Education */
-    .education-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem}
-    .education-card{
-      background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:2rem;border-radius:15px;text-align:center
-    }
-    .education-card h3{margin-bottom:1rem}
-    .institution{font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
-    .year{opacity:.9}
-
-    /* CTA */
-    .cta-section{
-      background:linear-gradient(135deg,var(--primary) 0%, var(--primary-2) 100%);color:#fff;text-align:center;
-      padding:4rem 2rem;border-radius:20px;margin:4rem 0
-    }
-    .cta-section h2{color:#fff;margin-bottom:1rem}
-    .cta-section h2::after{background:#fff}
-    .cta-button{
-      display:inline-block;background:#fff;color:var(--primary);padding:1rem 2rem;border-radius:50px;text-decoration:none;
-      font-weight:600;margin-top:1rem;transition:all .25s
-    }
-    .cta-button:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,.2)}
-
-    /* Footer */
-    footer{background:#2c3e50;color:#fff;text-align:center;padding:2rem}
-
-    /* 3D Tilt + Parallax */
-    .tiltable{position:relative;transform-style:preserve-3d;will-change:transform,box-shadow;transition:transform .2s ease, box-shadow .2s ease}
-    .tiltable::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.35), transparent 45%);opacity:0;transition:opacity .2s ease;pointer-events:none}
-    .tilt-active::after{opacity:.35}
-
-    /* Animations */
-    .fade-in{opacity:0;transform:translateY(30px);animation:fadeInUp .8s ease-out forwards;animation-play-state:paused}
-    @keyframes fadeInUp{to{opacity:1;transform:translateY(0)}}
-
-    /* Back to top */
-    .to-top{
-      position:fixed;right:16px;bottom:16px;background:#fff;color:#000;border:1px solid #e6e6e6;border-radius:999px;
-      padding:.6rem .9rem;box-shadow:0 10px 25px rgba(0,0,0,.12);cursor:pointer;display:none;z-index:999
-    }
-    .to-top.show{display:block}
-
-    /* Mobile */
-    @media (max-width: 768px){
-      .header-content{flex-direction:column;text-align:center;gap:1.5rem}
-      .header-text h1{font-size:2rem}
-      .contact-info{justify-content:center}
-      nav ul{flex-wrap:wrap;gap:1rem}
-      .ms-badge{position:static;margin-top:1rem}
-      .experience-timeline{padding-left:1rem}
-      .experience-item{margin-left:1rem}
-    }
-
-    /* Dark mode (auto) */
-    @media (prefers-color-scheme: dark){
-      :root{--ink:#e7e7e7;--bg:#0b0b0d;--card:#111218;--muted:#1a2230}
-      .skill-category{box-shadow:0 8px 26px rgba(0,0,0,.35)}
-      .project-card{background:#0f1218;box-shadow:0 10px 28px rgba(0,0,0,.35)}
-      .education-card{box-shadow:0 10px 28px rgba(0,0,0,.35)}
-      .experience-item{background:#0f1218;box-shadow:0 10px 28px rgba(0,0,0,.35)}
-      .cta-button{background:#111827;color:#fff;border:1px solid #2b3445}
-      .to-top{background:#0f1218;color:#fff;border-color:#2b3445}
-    }
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      *{animation:none !important;transition:none !important;scroll-behavior:auto}
-      .profile-img{animation:none}
-    }
-  </style>
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-bottom:18px}
+  .skill-card{background:var(--bg);border:0.5px solid var(--border);border-radius:8px;padding:10px 12px}
+  .skill-name{font-size:13px;font-weight:500;margin-bottom:5px}
+  .skill-track{height:4px;background:var(--border);border-radius:2px}
+  .skill-fill{height:4px;border-radius:2px;background:#378ADD}
+  .skill-level{font-size:10px;color:var(--text2);margin-top:3px}
+  .cert-card{display:flex;gap:12px;align-items:flex-start;background:var(--bg);border:0.5px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:8px}
+  .cert-icon{width:38px;height:38px;border-radius:8px;background:var(--blue-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .cert-name{font-size:13px;font-weight:500;margin-bottom:2px}
+  .cert-id{font-size:11px;color:var(--text2)}
+  .disclaimer{font-size:11px;color:var(--text3);font-style:italic;margin-top:4px}
+  .footer-note{margin-top:16px;padding:10px 14px;background:var(--bg2);border-radius:8px;border:0.5px solid var(--border);font-size:12px;color:var(--text2)}
+</style>
 </head>
 <body>
-  <div class="flow-bg" aria-hidden="true">
-    <svg viewBox="0 0 1200 800" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="flowGrad" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="var(--primary-2)" />
-          <stop offset="100%" stop-color="var(--primary)" />
-        </linearGradient>
-      </defs>
-      <path class="flow-line" d="M50 120 C300 60 600 160 900 110 S1150 90 1200 160" />
-      <path class="flow-line" d="M0 330 C220 290 480 380 720 320 S980 290 1200 360" />
-      <path class="flow-line" d="M0 580 C240 540 520 620 840 580 S1080 540 1200 600" />
-      <circle class="flow-node" cx="250" cy="90" r="5" />
-      <circle class="flow-node" cx="800" cy="120" r="5" />
-      <circle class="flow-node" cx="420" cy="340" r="5" />
-      <circle class="flow-node" cx="980" cy="330" r="5" />
-      <circle class="flow-node" cx="600" cy="610" r="5" />
-      <circle class="flow-node" cx="1100" cy="590" r="5" />
-    </svg>
-    <span class="flow-pulse pulse1"></span>
-    <span class="flow-pulse pulse2"></span>
-    <span class="flow-pulse pulse3"></span>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="avatar">LP</div>
+    <div>
+      <div class="hero-name">Lakshmi Praneetha</div>
+      <div class="hero-sub">Business Systems &amp; Automation Analyst &nbsp;·&nbsp; Edison, NJ &nbsp;·&nbsp; connect.lakshmiachanta@gmail.com</div>
+      <div class="tags">
+        <span class="tag tag-blue">Power Platform</span>
+        <span class="tag tag-green">Healthcare experience</span>
+        <span class="tag tag-amber">End-to-end automation</span>
+        <span class="tag tag-purple">Generative AI</span>
+        <span class="tag tag-teal">4+ years</span>
+      </div>
+    </div>
   </div>
-  <a href="#about" class="skip-link">Skip to content</a>
 
-  <header>
-    <div id="hero3d" aria-hidden="true"></div>
-    <div class="header-content">
-      <!-- Replace with your image. If not available, this circle still looks fine -->
-      <img src="profile-photo.jpg" alt="Portrait of Lakshmi Praneetha Achanta" class="profile-img" loading="lazy" />
-      <div class="header-text">
-        <h1>Lakshmi Praneetha Achanta</h1>
-        <div class="subtitle">SharePoint &amp; Power Platform apps that cut manual work and surface KPIs fast.</div>
-        <div class="location">📍 New Jersey, 08817</div>
-        <div class="brand-ribbon">
-          <span class="chip apps">Power Apps</span>
-          <span class="chip automate">Power Automate</span>
-          <span class="chip bi">Power BI</span>
-          <span class="chip sp">SharePoint</span>
+  <!-- NAV -->
+  <div class="nav">
+    <button class="active" onclick="show('fit',this)">JD fit</button>
+    <button onclick="show('cs1',this)">Case 1 — Reporting</button>
+    <button onclick="show('cs2',this)">Case 2 — Portal &amp; e-sign</button>
+    <button onclick="show('cs3',this)">Case 3 — Gen AI</button>
+    <button onclick="show('cs4',this)">Case 4 — Healthcare</button>
+    <button onclick="show('skills',this)">Skills &amp; certs</button>
+  </div>
+
+  <!-- JD FIT -->
+  <div id="fit" class="section active">
+    <p style="font-size:13px;color:var(--text2);margin-bottom:12px">Every key requirement in the JD mapped to a specific project.</p>
+    <div class="align-grid">
+      <div class="align-row"><div class="align-jd"><span class="check">✓</span>End-to-end workflow automation (intake → approval → e-sign → storage)</div><div>Case 2: YouthVine — full DocuSign-integrated pipeline matching JD flow exactly</div></div>
+      <div class="align-row"><div class="align-jd"><span class="check">✓</span>Low/no-code solutions (Power Automate, Power Apps)</div><div>All four cases + Microsoft Power Platform Developer certification</div></div>
+      <div class="align-row"><div class="align-jd"><span class="check">✓</span>Stakeholder requirements gathering &amp; scoping</div><div>Case 1: Algoritm Corp — cross-functional alignment across finance, ops, exec</div></div>
+      <div class="align-row"><div class="align-jd"><span class="check">✓</span>Client/partner portal &amp; web app development</div><div>Case 2: client-facing portals for invoices, reports &amp; request intake</div></div>
+      <div class="align-row"><div class="align-jd"><span class="check">✓</span>Generative AI adoption &amp; team enablement</div><div>Case 3: Dhassvita — AI summarization, anomaly detection, staff training</div></div>
+      <div class="align-row"><div class="align-jd"><span class="check">✓</span>Healthcare / PHI-adjacent environment</div><div>Case 4: Siddhartha Medical Sciences — governed data, role-based access</div></div>
+      <div class="align-row"><div class="align-jd"><span class="check">✓</span>Documentation, training &amp; change management</div><div>Lucidchart/Visio docs, user guides, adoption sessions across all roles</div></div>
+      <div class="align-row"><div class="align-jd"><span class="check">✓</span>SQL, Power BI, SharePoint</div><div>Core data and reporting layer used in every role</div></div>
+    </div>
+  </div>
+
+  <!-- CASE 1 -->
+  <div id="cs1" class="section">
+    <div class="case-card">
+      <div class="proj-img-wrap">
+        <img src="https://www.informatec.com/wp-content/uploads/2022/03/Power-BI-Solutions-for-Real-Time-Data-Analytics-Informatec.jpg" alt="Power BI dashboard" onerror="this.style.display='none'"/>
+        <div class="img-caption"><span>Power BI — unified reporting &amp; metrics governance</span></div>
+      </div>
+      <div class="case-header">
+        <div class="tags"><span class="tag tag-blue">Power BI</span><span class="tag tag-teal">Requirements gathering</span><span class="tag tag-amber">Data governance</span></div>
+        <div class="case-title">Unified reporting &amp; metrics governance</div>
+        <div class="case-meta">Algoritm Corp &nbsp;·&nbsp; Jersey City, NJ &nbsp;·&nbsp; Jul–Dec 2025</div>
+      </div>
+      <div class="case-body">
+        <div class="story-grid">
+          <div class="story-box observed"><div class="story-label">What I observed</div><div class="story-text">3 departments using different KPI definitions. Leadership couldn't reconcile numbers across dashboards — trust in data was eroding fast.</div></div>
+          <div class="story-box resolved"><div class="story-label">What I resolved</div><div class="story-text">Traced root cause to inconsistent SQL transformation logic. Facilitated cross-functional sessions to align all teams on a single metric framework.</div></div>
+          <div class="story-box built"><div class="story-label">What I built</div><div class="story-text">Unified semantic model, executive Power BI dashboards, and Power Automate flows for automated refresh coordination and exception alerting.</div></div>
+        </div>
+        <div class="innovation">
+          <div class="innovation-label">What made this different</div>
+          <div class="innovation-text">Rather than just fixing the dashboards, I introduced a metrics governance framework — each KPI now has a documented owner, agreed definition, and a controlled update process. This prevents the same problem from recurring as the org grows.</div>
+        </div>
+        <div class="label">End-to-end flow</div>
+        <div class="flow">
+          <div class="flow-step">SQL sources</div><div class="flow-arrow">→</div>
+          <div class="flow-step">Semantic model</div><div class="flow-arrow">→</div>
+          <div class="flow-step">Power BI dashboards</div><div class="flow-arrow">→</div>
+          <div class="flow-step">Auto refresh alerts</div><div class="flow-arrow">→</div>
+          <div class="flow-step">Stakeholder distribution</div>
+        </div>
+        <div class="label">Sample dashboard mockup</div>
+        <div class="mock">
+          <div class="mock-dots"><div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div></div>
+          <div class="kpi-row">
+            <div class="kpi"><span class="kpi-val">87%</span><span class="kpi-lbl">Process efficiency</span></div>
+            <div class="kpi"><span class="kpi-val">14</span><span class="kpi-lbl">Open exceptions</span></div>
+            <div class="kpi"><span class="kpi-val">96%</span><span class="kpi-lbl">SLA compliance</span></div>
+          </div>
+          <div class="chart-box">
+            <div class="chart-lbl">Monthly volume by department (sample data)</div>
+            <div class="bars">
+              <div class="bar" style="height:70%"></div><div class="bar" style="height:52%"></div>
+              <div class="bar" style="height:85%"></div><div class="bar" style="height:60%"></div>
+              <div class="bar" style="height:78%"></div><div class="bar" style="height:58%"></div>
+            </div>
+            <div class="bar-lbl-row"><span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span></div>
+          </div>
+        </div>
+        <div class="disclaimer">* All figures anonymized — sample data only</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 2 -->
+  <div id="cs2" class="section">
+    <div class="case-card">
+      <div class="proj-img-wrap">
+        <img src="https://www.yeeflow.com/hubfs/blog-cover/Workflow-Automation-with-Electronic-Signatures.webp" alt="Workflow automation e-signature" onerror="this.style.display='none'"/>
+        <div class="img-caption"><span>End-to-end workflow automation — intake to e-signature to storage</span></div>
+      </div>
+      <div class="case-header">
+        <div class="tags"><span class="tag tag-amber">End-to-end automation</span><span class="tag tag-purple">DocuSign / e-sign</span><span class="tag tag-teal">Client portal</span></div>
+        <div class="case-title">Campaign data portal with e-signature automation</div>
+        <div class="case-meta">YouthVine Marketing Agency &nbsp;·&nbsp; San Diego, CA &nbsp;·&nbsp; Nov 2024–Jul 2025</div>
+      </div>
+      <div class="case-body">
+        <div class="story-grid">
+          <div class="story-box observed"><div class="story-label">What I observed</div><div class="story-text">Intake, approvals, client reporting, and vendor contracts all ran through disconnected email threads. No audit trail. Contracts delayed by fully manual e-signature routing.</div></div>
+          <div class="story-box resolved"><div class="story-label">What I resolved</div><div class="story-text">Mapped the full process lifecycle, identified every manual handoff, and re-engineered the flow end-to-end — from intake to signed document storage.</div></div>
+          <div class="story-box built"><div class="story-label">What I built</div><div class="story-text">Power Apps intake portal, Power Automate approval + DocuSign routing, SharePoint document storage, and a client-facing self-serve reporting portal.</div></div>
+        </div>
+        <div class="innovation">
+          <div class="innovation-label">What made this different</div>
+          <div class="innovation-text">I built the client portal as a self-serve layer — instead of clients emailing for invoice status or reports, they log in and see everything in real time. This reduced internal ad hoc requests and made the agency look significantly more professional to clients.</div>
+        </div>
+        <div class="label">End-to-end flow (mirrors Providence JD)</div>
+        <div class="flow">
+          <div class="flow-step">Intake form</div><div class="flow-arrow">→</div>
+          <div class="flow-step">Validation</div><div class="flow-arrow">→</div>
+          <div class="flow-step">Approval routing</div><div class="flow-arrow">→</div>
+          <div class="flow-step">E-signature</div><div class="flow-arrow">→</div>
+          <div class="flow-step">SharePoint storage</div><div class="flow-arrow">→</div>
+          <div class="flow-step">Portal + alerts</div>
+        </div>
+        <div class="label">Client portal mockup</div>
+        <div class="mock">
+          <div class="mock-dots"><div class="mock-dot"></div><div class="mock-dot"></div><div class="mock-dot"></div></div>
+          <div class="portal-inner">
+            <div class="portal-head"><div class="portal-title">Campaign request tracker</div><div class="portal-live">Live</div></div>
+            <div class="portal-row"><span><span class="sdot" style="background:#639922"></span>Q4 Brand Campaign — Contract</span><span>Signed · Oct 12</span></div>
+            <div class="portal-row"><span><span class="sdot" style="background:#378ADD"></span>Influencer Brief — Approval</span><span>Pending review</span></div>
+            <div class="portal-row"><span><span class="sdot" style="background:#EF9F27"></span>Vendor Invoice #1042</span><span>Awaiting e-sign</span></div>
+            <div class="portal-row"><span><span class="sdot" style="background:#639922"></span>October Spend Report</span><span>Available · Nov 2</span></div>
+          </div>
+        </div>
+        <div class="disclaimer">* Sample data only — all client information anonymized</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 3 -->
+  <div id="cs3" class="section">
+    <div class="case-card">
+      <div class="proj-img-wrap">
+        <img src="https://nanonets.com/blog/content/images/2023/07/AI-Workflow-Automation.png" alt="AI workflow automation" onerror="this.style.display='none'"/>
+        <div class="img-caption"><span>Generative AI integrated into operational workflows</span></div>
+      </div>
+      <div class="case-header">
+        <div class="tags"><span class="tag tag-purple">Generative AI</span><span class="tag tag-blue">Power Platform</span><span class="tag tag-teal">Team enablement</span></div>
+        <div class="case-title">Generative AI integration in operational workflows</div>
+        <div class="case-meta">Dhassvita Tech &nbsp;·&nbsp; Austin, TX &nbsp;·&nbsp; Feb 2026–Present</div>
+      </div>
+      <div class="case-body">
+        <div class="story-grid">
+          <div class="story-box observed"><div class="story-label">What I observed</div><div class="story-text">Finance and ops teams spending hours weekly on routine report generation and manually reading exception logs to find patterns.</div></div>
+          <div class="story-box resolved"><div class="story-label">What I resolved</div><div class="story-text">Identified high-repetition tasks suitable for AI assistance. Built structured data pipelines to feed AI tools reliably with validated inputs.</div></div>
+          <div class="story-box built"><div class="story-label">What I built</div><div class="story-text">AI-assisted exception summarization, automated report drafting, and a knowledge retrieval tool — all within the Power Platform ecosystem.</div></div>
+        </div>
+        <div class="innovation">
+          <div class="innovation-label">What made this different</div>
+          <div class="innovation-text">Most teams bolt AI onto existing processes as a demo. I redesigned the data pipeline first so AI receives clean, validated inputs — making outputs reliable enough to distribute without full human review on every cycle. I also ran structured training so staff understood what AI could and couldn't do, preventing over-reliance.</div>
+        </div>
+        <div class="label">AI use cases built</div>
+        <div class="ai-card">
+          <div class="ai-pill">Exception summarization</div>
+          <div class="ai-desc">Workflow exceptions fed into AI pipeline → auto-generated plain-language summary for ops leads each morning</div>
+          <div class="ai-output">3 exceptions flagged this week. Root cause: missing vendor codes in 2 invoices. Recommended action: notify AP team before Friday close.</div>
+        </div>
+        <div class="ai-card">
+          <div class="ai-pill">Automated report drafting</div>
+          <div class="ai-desc">Structured data output → AI drafts weekly operational narrative → human review before stakeholder distribution</div>
+        </div>
+        <div class="ai-card">
+          <div class="ai-pill">Knowledge retrieval for ops staff</div>
+          <div class="ai-desc">Staff query internal process docs via AI assistant instead of searching SharePoint manually — reducing onboarding time and support requests</div>
         </div>
       </div>
     </div>
-    <div class="ms-badge" aria-label="Microsoft 365 Expert: 3+ years">
-      <h3>🏆 Microsoft 365 Expert</h3>
-      <p>3+ Years Experience</p>
-      <small>SharePoint • Power Platform • Power BI</small>
+  </div>
+
+  <!-- CASE 4 -->
+  <div id="cs4" class="section">
+    <div class="case-card">
+      <div class="proj-img-wrap">
+        <img src="https://www.ciprg.com/wp-content/uploads/2022/07/Health-Data-Governance-Principles.jpg" alt="Healthcare data governance" onerror="this.style.display='none'"/>
+        <div class="img-caption"><span>Healthcare reporting — governed data, role-based access, audit-ready</span></div>
+      </div>
+      <div class="case-header">
+        <div class="tags"><span class="tag tag-green">Healthcare environment</span><span class="tag tag-blue">Power BI</span><span class="tag tag-amber">Governance</span></div>
+        <div class="case-title">Healthcare reporting &amp; workflow automation</div>
+        <div class="case-meta">Siddhartha Institute of Medical Sciences &nbsp;·&nbsp; India &nbsp;·&nbsp; Sep 2019–Jun 2022</div>
+      </div>
+      <div class="case-body">
+        <div class="story-grid">
+          <div class="story-box observed"><div class="story-label">What I observed</div><div class="story-text">Manual enrollment reporting, inconsistent data across systems, and no formal access control — a significant risk in a healthcare institution handling sensitive records.</div></div>
+          <div class="story-box resolved"><div class="story-label">What I resolved</div><div class="story-text">Introduced structured data governance from the ground up: role-based access, validation checks, and controlled distribution. Coordinated with IT for compliance-ready deployment.</div></div>
+          <div class="story-box built"><div class="story-label">What I built</div><div class="story-text">Power BI dashboards with role-specific DAX views, Power Automate flows for reporting automation, and Azure SQL relational models as the structured data layer.</div></div>
+        </div>
+        <div class="innovation">
+          <div class="innovation-label">What made this different</div>
+          <div class="innovation-text">This was my first exposure to building systems in a sensitive data environment — and it shaped how I approach every project since. I introduced access controls and audit trails as a design-first principle, not an afterthought. That practice is directly relevant to working in an anesthesiology practice where PHI handling is non-negotiable.</div>
+        </div>
+        <div class="label">Governance practices applied</div>
+        <div class="gov-grid">
+          <div class="gov-item"><div class="gov-title">Role-based access control</div><div class="gov-sub">Stakeholder-appropriate data visibility at every level</div></div>
+          <div class="gov-item"><div class="gov-title">Inbound validation checks</div><div class="gov-sub">Data quality enforced at the source layer</div></div>
+          <div class="gov-item"><div class="gov-title">Lucidchart / Visio documentation</div><div class="gov-sub">Process flows for compliance readiness and handoff</div></div>
+          <div class="gov-item"><div class="gov-title">IT coordination</div><div class="gov-sub">Environment setup and deployment standards aligned with IT</div></div>
+        </div>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <nav aria-label="Primary">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Capabilities</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#samples">Work Samples</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- SKILLS -->
+  <div id="skills" class="section">
+    <p style="font-size:13px;font-weight:500;margin-bottom:12px">Core tools &amp; skills</p>
+    <div class="skills-grid">
+      <div class="skill-card"><div class="skill-name">Power Automate</div><div class="skill-track"><div class="skill-fill" style="width:95%"></div></div><div class="skill-level">Expert · 4+ yrs</div></div>
+      <div class="skill-card"><div class="skill-name">Power BI</div><div class="skill-track"><div class="skill-fill" style="width:92%"></div></div><div class="skill-level">Expert · 4+ yrs</div></div>
+      <div class="skill-card"><div class="skill-name">Power Apps</div><div class="skill-track"><div class="skill-fill" style="width:88%"></div></div><div class="skill-level">Advanced</div></div>
+      <div class="skill-card"><div class="skill-name">SQL</div><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div><div class="skill-level">Advanced</div></div>
+      <div class="skill-card"><div class="skill-name">SharePoint</div><div class="skill-track"><div class="skill-fill" style="width:82%"></div></div><div class="skill-level">Advanced</div></div>
+      <div class="skill-card"><div class="skill-name">Azure SQL</div><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div><div class="skill-level">Advanced</div></div>
+      <div class="skill-card"><div class="skill-name">DocuSign / e-sign</div><div class="skill-track"><div class="skill-fill" style="width:75%"></div></div><div class="skill-level">Proficient</div></div>
+      <div class="skill-card"><div class="skill-name">Python</div><div class="skill-track"><div class="skill-fill" style="width:70%"></div></div><div class="skill-level">Proficient</div></div>
+      <div class="skill-card"><div class="skill-name">Generative AI</div><div class="skill-track"><div class="skill-fill" style="width:72%"></div></div><div class="skill-level">Active use</div></div>
+    </div>
+    <p style="font-size:13px;font-weight:500;margin-bottom:12px">Certifications</p>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="1" y="1" width="20" height="20" rx="5" fill="var(--blue-bg)"/><path d="M6 11l4 4 6-7" stroke="var(--blue-text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="cert-name">Microsoft Certified: Power Platform Developer Associate</div>
+        <div class="cert-id">Credential ID: 6C487DB22790FEA0 &nbsp;·&nbsp; Cert #: A3A47C-1E4F3C</div>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-icon">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="1" y="1" width="20" height="20" rx="5" fill="var(--green-bg)"/><circle cx="11" cy="11" r="6" stroke="var(--green-text)" stroke-width="1.5" fill="none"/><path d="M11 8v4l2.5 1.5" stroke="var(--green-text)" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="cert-name">MS — Information Systems, Stevens Institute of Technology</div>
+        <div class="cert-id">Hoboken, NJ &nbsp;·&nbsp; May 2024</div>
+      </div>
+    </div>
+    <div class="footer-note">All dashboard visuals and figures in this portfolio use anonymized or sample data. Actual client and patient data from previous roles is confidential and has not been reproduced here.</div>
+  </div>
 
-  <main>
-    <section id="about" class="fade-in" tabindex="-1">
-      <h2>About Me</h2>
-      <div style="background: var(--card); padding: 2rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; font-size: 1.1rem; line-height: 1.8;">
-  <p><strong>I design and ship Microsoft 365 solutions</strong> that turn manual work into Power Apps, Power Automate flows, and SharePoint experiences that people actually use. I’m comfortable across the stack—SPFx (TypeScript), .NET/C# integrations, SQL modeling, and Power BI dashboards with DAX/RLS—while keeping governance in mind with Purview, DLP, and clear documentation.</p>
-  <br />
-  <p><strong>What that looks like lately:</strong> model-driven apps for access requests and recerts; canvas apps for field teams; automated approvals with Teams Adaptive Cards; Power BI exec views; SPFx micro-dashboards; and Azure DevOps pipelines for ALM/CI-CD so changes move cleanly from Dev → Test → Prod.</p>
 </div>
-    </section>
-
-    <section id="skills" class="fade-in" tabindex="-1">
-      <h2>Capabilities</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>🧱 Build</h3>
-          <div class="skill-tags">
-            <span class="skill-tag featured">Power Apps (Canvas &amp; Model-Driven)</span>
-            <span class="skill-tag featured">SharePoint Online &amp; SPFx</span>
-            <span class="skill-tag">Power Pages</span>
-            <span class="skill-tag">Dataverse</span>
-            <span class="skill-tag">Microsoft Graph</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>🔄 Automate</h3>
-          <div class="skill-tags">
-            <span class="skill-tag featured">Power Automate (Approvals, RPA)</span>
-            <span class="skill-tag">Teams Adaptive Cards</span>
-            <span class="skill-tag">Azure Data Factory</span>
-            <span class="skill-tag">Governance &amp; RBAC</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>📊 Data &amp; Analytics</h3>
-          <div class="skill-tags">
-            <span class="skill-tag featured">Power BI (DAX, RLS)</span>
-            <span class="skill-tag">SQL Server (Tables, Views, SPs)</span>
-            <span class="skill-tag">Dataflows / Power Query</span>
-            <span class="skill-tag">Purview Catalog</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3>🚀 DevOps &amp; Integrations</h3>
-          <div class="skill-tags">
-            <span class="skill-tag featured">Azure DevOps (ALM, CI/CD)</span>
-            <span class="skill-tag">.NET / C# Services</span>
-            <span class="skill-tag">PowerShell &amp; PnP</span>
-            <span class="skill-tag">Custom Connectors / APIs</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="fade-in" tabindex="-1">
-      <h2>Professional Experience</h2>
-      <div class="experience-timeline">
-        <div class="experience-item">
-          <h3>Data Strategy Specialist</h3>
-          <div class="company">YouthVine Marketing Agency</div>
-          <div class="duration">November 2024 - July 2025 | Remote, San Diego, CA</div>
-          <ul>
-            <li>Built real-time Power BI dashboards on Azure SQL data using DAX and Power Query for instant leadership insights</li>
-            <li>Created model-driven Power Apps and end-to-end Power Platform solutions with RBAC security</li>
-            <li>Implemented data governance standards with Azure Purview for automated catalog and classification</li>
-            <li>Designed custom security roles and owner teams in Power Platform for role-based data access</li>
-            <li>Reduced ad-hoc report requests by 50% through interactive Tableau visualizations</li>
-          </ul>
-        </div>
-        <div class="experience-item">
-          <h3>Business Data Analyst</h3>
-          <div class="company">Algoritm Corp</div>
-          <div class="duration">July 2025 - October 2025 | New Jersey</div>
-          <ul>
-            <li>Deployed ETL workflows in Azure Data Factory and Power Automate improving operational efficiency</li>
-            <li>Built low-code Power Apps solutions connected to SharePoint Lists for requirements tracking</li>
-            <li>Developed interactive dashboards embedded in SharePoint Online using Power BI</li>
-            <li>Automated KPIs and performance alerts providing visibility for budgeting and forecasting</li>
-          </ul>
-        </div>
-       <div class="experience-item">
-  <h3>Data Strategy &amp; Analytics Research Fellow</h3>
-  <div class="company">Marine-Mesh</div>
-  <div class="duration">December 2023 – August 2024 | Hoboken, New Jersey</div>
-  <ul>
-    <li>Designed and explored a prototype data intelligence framework for marine logistics, focusing on predictive maintenance, operational visibility, and sustainability analytics.</li>
-    <li>Modeled simulated datasets representing vessel performance, maintenance logs, and sensor readings; applied Python-based preprocessing, feature engineering, and anomaly detection to identify efficiency patterns.</li>
-    <li>Built exploratory Power BI dashboards visualizing operational KPIs, downtime trends, and AI-generated maintenance forecasts.</li>
-    <li>Experimented with Azure Machine Learning and AutoML pipelines to test predictive models for fuel consumption and delay probability using synthetic datasets.</li>
-    <li>Integrated outputs with Azure SQL and Power BI for interpretability and scenario simulation dashboards.</li>
-    <li>Researched data governance frameworks—including cataloging, data quality, and lineage tracking—using Azure Purview to simulate enterprise data stewardship.</li>
-    <li>Authored a concept whitepaper summarizing architecture diagrams, model evaluation metrics, and practical recommendations for scaling analytics-driven decision support in marine operations.</li>
-  </ul>
-</div>
-
-        <div class="experience-item">
-          <h3>Business Analyst</h3>
-          <div class="company">Siddhartha Institute of Medical Sciences</div>
-          <div class="duration">April 2021 - June 2022 | Krishna, India</div>
-          <ul>
-            <li>Created Power BI dashboards for student enrollment and performance trend analysis</li>
-            <li>Centralized student records using Azure SQL Database for improved data accessibility</li>
-            <li>Automated data entry and report generation using Power Automate saving administrative time</li>
-            <li>Mapped existing workflows using process improvement tools and documentation</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="fade-in" tabindex="-1">
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>🧭 M365 Compliance Hub</h3>
-          <p>Central place for retention labels, DLP alerts, and exception approvals. Power Automate routes reviews; Power BI reports show exposure and status; SharePoint stores auditable decisions.</p>
-          <div class="project-tech"><span class="tech-tag">Microsoft Purview</span><span class="tech-tag">Power Automate</span><span class="tech-tag">Power BI</span><span class="tech-tag">SharePoint Online</span></div>
-        </div>
-        <div class="project-card">
-          <h3>🚚 SharePoint On‑Prem → Online Migration</h3>
-          <p>Inventory, map, and migrate sites/lists to SharePoint Online with content types and modern permissions. Post‑cutover health checks and redirect plan included.</p>
-          <div class="project-tech"><span class="tech-tag">SharePoint Migration</span><span class="tech-tag">Content Types</span><span class="tech-tag">Modern Auth</span><span class="tech-tag">Site Scripts</span></div>
-        </div>
-        <div class="project-card">
-          <h3>🔐 Access Recertification & Site Provisioning</h3>
-          <p>Model‑driven app to request/approve SharePoint site access and run quarterly recerts. Teams adaptive cards collect approvals; Graph checks membership; Dataverse keeps the log.</p>
-          <div class="project-tech"><span class="tech-tag">Power Apps (Model‑Driven)</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Microsoft Graph</span><span class="tech-tag">Teams</span><span class="tech-tag">SharePoint Online</span></div>
-        </div>
-        <div class="project-card">
-          <h3>🧪 Data Quality & Drift Monitor</h3>
-          <p>Scheduled flows snapshot key tables, hash and compare, and raise a Teams alert with a sparkline when values drift. Optional AI Builder sentiment for text fields.</p>
-          <div class="project-tech"><span class="tech-tag">Power Automate</span><span class="tech-tag">AI Builder</span><span class="tech-tag">Power BI</span><span class="tech-tag">Teams</span></div>
-        </div>
-        <div class="project-card">
-          <h3>🌐 Client Project View Portal</h3>
-          <p>External Power Pages portal where clients track milestones, deliverables, and KPIs. Embeds Power BI and writes feedback to SharePoint/Dataverse.</p>
-          <div class="project-tech"><span class="tech-tag">Power Pages</span><span class="tech-tag">Power BI Embed</span><span class="tech-tag">Dataverse</span><span class="tech-tag">SharePoint</span></div>
-        </div>
-        <div class="project-card">
-          <h3>📈 Marketing Insight Loop</h3>
-          <p>Azure Data Factory pulls CRM and ad‑platform data; curated tables feed Power BI; Teams cards prompt budget tweaks and log outcomes.</p>
-          <div class="project-tech"><span class="tech-tag">Azure Data Factory</span><span class="tech-tag">Power BI</span><span class="tech-tag">SharePoint</span><span class="tech-tag">Teams Adaptive Cards</span></div>
-        </div>
-        <div class="project-card">
-          <h3>🧩 Legacy App → Power Platform Migration</h3>
-          <p>Rebuilt spreadsheets/forms as Power Apps; moved data to Dataverse/SharePoint; replaced nightly jobs with Power Automate; added Power BI KPIs.</p>
-          <div class="project-tech"><span class="tech-tag">Power Apps</span><span class="tech-tag">Dataverse</span><span class="tech-tag">Power Automate</span><span class="tech-tag">Power BI</span></div>
-        </div>
-        <div class="project-card">
-          <h3>🧷 SharePoint ↔ SQL Integration Service</h3>
-          <p>Lightweight .NET service moves curated data between SharePoint lists/Dataverse and SQL for analytics and retention. Includes retry logic, error logging, and idempotent upserts; surfaced via SPFx cards and monitored in Power BI.</p>
-          <div class="project-tech">
-            <span class="tech-tag">.NET (C#)</span><span class="tech-tag">SQL Server</span>
-            <span class="tech-tag">SharePoint / Dataverse</span><span class="tech-tag">SPFx</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <h3>🛠️ ALM &amp; CI/CD for Power Platform</h3>
-          <p>Solution-based ALM with Azure DevOps pipelines: unpack/pack, environment variables, connection refs, automated solution export/import, and approvals. Clean promotion Dev → Test → Prod with audit history.</p>
-          <div class="project-tech">
-            <span class="tech-tag">Azure DevOps</span><span class="tech-tag">Power Platform ALM</span>
-            <span class="tech-tag">PowerShell</span><span class="tech-tag">Git</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="samples" class="fade-in" tabindex="-1">
-      <h2>Work Samples</h2>
-      <div class="samples-grid">
-        <figure class="sample-card">
-          <img src="Marketing Insight Loop. Data-to-Action Flow.png" alt="Marketing Insight Loop. Data-to-Action Flow" loading="lazy" />
-          <figcaption><strong>Marketing Insight Loop. Data-to-Action Flow</strong></figcaption>
-        </figure>
-        <figure class="sample-card">
-          <img src="DailyETL.png" alt="Daily ETL" loading="lazy" />
-          <figcaption><strong>Daily ETL</strong></figcaption>
-        </figure>
-        <figure class="sample-card">
-          <img src="GetTwitter.png" alt="GetTwitter" loading="lazy" />
-          <figcaption><strong>GetTwitter</strong></figcaption>
-        </figure>
-        <figure class="sample-card">
-          <img src="Present2.png" alt="Latency vs Packet Loss bubble map" loading="lazy" />
-          <figcaption><strong>Latency vs Packet Loss</strong> (Power BI)</figcaption>
-        </figure>
-        <figure class="sample-card">
-          <img src="Present1.png" alt="Network overview dashboard showing latency, packet loss, battery and signal strength" loading="lazy" />
-          <figcaption><strong>Network Overview</strong> (Power BI)</figcaption>
-        </figure>
-        <figure class="sample-card">
-          <img src="PowerPagesForExternal.png" alt="Client Project View portal screenshot" loading="lazy" />
-          <figcaption><strong>Client Project View</strong> (Power Pages)</figcaption>
-        </figure>
-      </div>
-      <p style="text-align:center;font-size:.9rem;color:#555;margin-top:1rem">All artifacts are sanitized and client-safe. Full demos available on request.</p>
-    </section>
-
-    <section id="education" class="fade-in" tabindex="-1">
-      <h2>Education & Certifications</h2>
-      <div class="education-grid">
-        <div class="education-card">
-          <h3>🎓 Master of Information Systems</h3>
-          <div class="institution">Stevens Institute of Technology</div>
-          <div class="year">May 2024 | Hoboken, New Jersey</div>
-          <p style="margin-top: 1rem; font-size: 0.9rem;">
-            Strategic Project Management | IT Strategies | Business Analytics | Data Visualization | Financial Decision Making
-          </p>
-        </div>
-        <div class="education-card">
-          <h3>🎓 Bachelor of Business Administration</h3>
-          <div class="institution">KL University</div>
-          <div class="year">Vijayawada, India</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="cta-section fade-in" tabindex="-1">
-      <h2>Let’s build something useful</h2>
-      <p style="font-size:1.2rem;margin-bottom:2rem">
-        Let's talk SharePoint sites, Power Apps, and automation. I can show quick demos and discuss trade‑offs for your team.
-      </p>
-      <a href="mailto:lakshmiachanta2000@gmail.com?subject=Microsoft 365 Developer Opportunity" class="cta-button">📧 Let's Connect</a>
-    </section>
-  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
-      <div class="frame">
-        <button class="close" aria-label="Close">×</button>
-        <button class="nav prev" aria-label="Previous">‹</button>
-        <img src="" alt="" />
-        <button class="nav next" aria-label="Next">›</button>
-        <figcaption></figcaption>
-      </div>
-    </div>
-  </main>
-
-  <footer role="contentinfo">
-    <p>&copy; 2025 Lakshmi Praneetha Achanta | Microsoft 365 Application Developer | Transforming Business Through Technology</p>
-  </footer>
-
-  <button class="to-top" id="toTop" aria-label="Back to top">↑ Top</button>
-
-  <!-- Structured data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Lakshmi Praneetha Achanta",
-    "jobTitle":"Microsoft 365 Application Developer",
-    "email":"mailto:lakshmiachanta2000@gmail.com",
-    "telephone":"+1-917-847-0703",
-    "address":{"@type":"PostalAddress","addressRegion":"NJ","addressCountry":"US"},
-    "url":"https://<your-username>.github.io/",
-    "sameAs":[
-      "https://www.linkedin.com/in/<your-handle>",
-      "https://github.com/<your-username>"
-    ]
-  }
-  </script>
-
-  <script>
-    // 3D tilt & flow parallax (no libraries)
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    function tiltify(selector, maxX=10, maxY=12){
-      if (prefersReduced || !window.matchMedia('(hover:hover)').matches) return;
-      document.querySelectorAll(selector).forEach(el=>{
-        el.classList.add('tiltable');
-        let raf=null;
-        const onMove = (e)=>{
-          const rect = el.getBoundingClientRect();
-          const x = (e.clientX - rect.left)/rect.width;
-          const y = (e.clientY - rect.top)/rect.height;
-          const rx = (0.5 - y) * (maxX*2);
-          const ry = (x - 0.5) * (maxY*2);
-          el.style.setProperty('--mx', (x*100).toFixed(2)+'%');
-          el.style.setProperty('--my', (y*100).toFixed(2)+'%');
-          if (raf) cancelAnimationFrame(raf);
-          raf = requestAnimationFrame(()=>{
-            el.style.transform = `rotateX(${rx.toFixed(2)}deg) rotateY(${ry.toFixed(2)}deg) translateZ(0)`;
-            el.classList.add('tilt-active');
-            el.style.boxShadow = '0 18px 45px rgba(0,0,0,.18)';
-          });
-        };
-        const reset = ()=>{
-          if (raf) cancelAnimationFrame(raf);
-          el.style.transform = 'rotateX(0) rotateY(0)';
-          el.classList.remove('tilt-active');
-          el.style.boxShadow = '';
-        };
-        el.addEventListener('mousemove', onMove);
-        el.addEventListener('mouseleave', reset);
-      });
-    }
-
-    // Apply tilt to key elements
-    tiltify('.project-card, .sample-card, .education-card', 8, 10);
-    tiltify('.profile-img', 6, 6);
-
-    // Parallax the flow background slightly on scroll
-    (function(){
-      if (prefersReduced) return;
-      const flow = document.querySelector('.flow-bg');
-      if (!flow) return;
-      window.addEventListener('scroll', ()=>{
-        const y = window.scrollY || document.documentElement.scrollTop;
-        flow.style.transform = `translateY(${(y*0.04).toFixed(1)}px)`;
-      });
-    })();
-
-    // Smooth scroll with focus management (keeps anchors visible under sticky nav)
-    document.querySelectorAll('nav a').forEach(link => {
-      link.addEventListener('click', e => {
-        const href = link.getAttribute('href');
-        if (!href || !href.startsWith('#')) return;
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target){
-          target.scrollIntoView({ behavior:'smooth', block:'start' });
-          // move focus for accessibility
-          target.setAttribute('tabindex','-1');
-          target.focus({ preventScroll:true });
-          // mark current
-          document.querySelectorAll('nav a').forEach(a => a.removeAttribute('aria-current'));
-          link.setAttribute('aria-current','true');
-        }
-      });
-    });
-
-    // IntersectionObserver to play fade-ins
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.style.animationPlayState = 'running';
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-    // Subtitle is static; typing effect removed for cleaner tone.
-
-    // Back to top button
-    const toTop = document.getElementById('toTop');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) toTop.classList.add('show'); else toTop.classList.remove('show');
-    });
-    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-  </script>
 <script>
-  // Simple lightbox for Work Samples
-  (function(){
-    const imgs = Array.from(document.querySelectorAll('.sample-card img'));
-    if (!imgs.length) return;
-    const lb = document.getElementById('lightbox');
-    const lbImg = lb.querySelector('img');
-    const lbCap = lb.querySelector('figcaption');
-    const prevBtn = lb.querySelector('.prev');
-    const nextBtn = lb.querySelector('.next');
-    const closeBtn = lb.querySelector('.close');
-    let idx = 0;
-    function show(i){
-      idx = (i + imgs.length) % imgs.length;
-      const img = imgs[idx];
-      lbImg.src = img.getAttribute('src');
-      lbImg.alt = img.getAttribute('alt') || '';
-      lbCap.textContent = img.getAttribute('alt') || '';
-      lb.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-    function close(){ lb.classList.remove('show'); document.body.style.overflow=''; }
-    imgs.forEach((img,i)=> img.addEventListener('click', ()=> show(i)) );
-    prevBtn.addEventListener('click', ()=> show(idx-1));
-    nextBtn.addEventListener('click', ()=> show(idx+1));
-    closeBtn.addEventListener('click', close);
-    lb.addEventListener('click', (e)=>{ if(e.target===lb) close(); });
-    document.addEventListener('keydown',(e)=>{
-      if(!lb.classList.contains('show')) return;
-      if(e.key==='Escape') close();
-      if(e.key==='ArrowRight') show(idx+1);
-      if(e.key==='ArrowLeft') show(idx-1);
-    });
-  })();
-</script>
-<script type="module">
-  // Lightweight 3D nodes background in the hero using Three.js (progressive enhancement)
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    (async () => {
-      try{
-        const THREE = await import('https://unpkg.com/three@0.158.0/build/three.module.js');
-        const container = document.getElementById('hero3d');
-        if(!container) return;
-        const w = container.clientWidth, h = container.clientHeight;
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, w/h, 0.1, 1000);
-        camera.position.z = 60;
-        const renderer = new THREE.WebGLRenderer({ antialias:true, alpha:true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        renderer.setSize(w, h);
-        container.appendChild(renderer.domElement);
-
-        const group = new THREE.Group();
-        scene.add(group);
-        const nodes = [];
-        const bounds = 28;
-        const nodeGeo = new THREE.SphereGeometry(0.7, 16, 16);
-        const nodeMat = new THREE.MeshBasicMaterial({ color: 0x0078D4 }); // Automate blue
-        for(let i=0;i<26;i++){
-          const m = new THREE.Mesh(nodeGeo, nodeMat.clone());
-          m.position.set((Math.random()*2-1)*bounds, (Math.random()*2-1)*bounds*0.6, (Math.random()*2-1)*bounds);
-          m.userData.v = new THREE.Vector3((Math.random()-0.5)*0.2, (Math.random()-0.5)*0.2, (Math.random()-0.5)*0.2);
-          group.add(m); nodes.push(m);
-        }
-        const lineMat = new THREE.LineBasicMaterial({ color: 0x742774, transparent:true, opacity:0.5 }); // Power Apps purple
-        const lineGeo = new THREE.BufferGeometry();
-        const maxSeg = nodes.length*nodes.length*2;
-        const positions = new Float32Array(maxSeg*3);
-        const lines = new THREE.LineSegments(lineGeo, lineMat);
-        scene.add(lines);
-
-        function updateLines(){
-          let idx = 0;
-          for(let i=0;i<nodes.length;i++){
-            for(let j=i+1;j<nodes.length;j++){
-              const a = nodes[i].position, b = nodes[j].position;
-              const d = a.distanceTo(b);
-              if(d < 15){
-                positions[idx++] = a.x; positions[idx++] = a.y; positions[idx++] = a.z;
-                positions[idx++] = b.x; positions[idx++] = b.y; positions[idx++] = b.z;
-              }
-            }
-          }
-          lineGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-          lineGeo.setDrawRange(0, idx);
-          lineGeo.attributes.position.needsUpdate = true;
-        }
-
-        function animate(){
-          requestAnimationFrame(animate);
-          nodes.forEach(n=>{
-            n.position.add(n.userData.v);
-            ['x','y','z'].forEach(k=>{
-              if(n.position[k] > bounds){ n.position[k] = bounds; n.userData.v[k]*=-1; }
-              if(n.position[k] < -bounds){ n.position[k] = -bounds; n.userData.v[k]*=-1; }
-            });
-          });
-          updateLines();
-          renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', ()=>{
-          const w = container.clientWidth, h = container.clientHeight;
-          renderer.setSize(w, h);
-          camera.aspect = w/h; camera.updateProjectionMatrix();
-        });
-      }catch(e){/* no-op if CDN blocked */}
-    })();
-  }
+function show(id, btn) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
 </script>
 </body>
 </html>
+    
+  
+  
+
+
+    
+            
+        
+ 
+    
+         
+   
+
+
+          
+  
+  
+     
